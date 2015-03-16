@@ -141,6 +141,103 @@ Blockly.Msg.COLOUR_BLEND_RATIO = 'ratio';
 /// tooltip - See [https://github.com/google/blockly/wiki/Colour#blending-colours https://github.com/google/blockly/wiki/Colour#blending-colours].
 Blockly.Msg.COLOUR_BLEND_TOOLTIP = 'Blends two colours together with a given ratio (0.0 - 1.0).';
 
+// Structures Blocks.
+/// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].
+Blockly.Msg.STRUCTURES_LOOP_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
+/// block input text - Title of [https://github.com/google/blockly/wiki/Loops#repeat repeat block].\n\nParameters:\n* %1 - the number of times the body of the loop should be repeated.
+Blockly.Msg.STRUCTURES_LOOP_TITLE = 'Loop %1 times';
+/// block text - Text preceding the number of repetitions in a [https://github.com/google/blockly/wiki/Loops#repeat repeat block].
+/// (This is redundant with the previous message but is needed to support older code.)
+Blockly.Msg.STRUCTURES_LOOP_TITLE_REPEAT = 'repeat';
+/// block text - Text following the number of times a [https://github.com/google/blockly/wiki/Loops#repeat repeat loop] should be repeated.
+/// (This is redundant but is needed to support older code.)
+Blockly.Msg.STRUCTURES_LOOP_TITLE_TIMES = 'times';
+/// block text - Preceding the blocks in the body of the loop.  See [https://github.com/google/blockly/wiki/Loops https://github.com/google/blockly/wiki/Loops].
+Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO = 'do';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#repeat https://github.com/google/blockly/wiki/Loops#repeat].
+Blockly.Msg.STRUCTURES_REPEAT_TOOLTIP = 'Do some statements several times.';
+/// url - Describes 'while loops' in computer programs; consider using the translation of [https://en.wikipedia.org/wiki/While_loop https://en.wikipedia.org/wiki/While_loop], if present, or [https://en.wikipedia.org/wiki/Control_flow https://en.wikipedia.org/wiki/Control_flow].
+Blockly.Msg.STRUCTURES_WHILEUNTIL_HELPURL = 'https://github.com/google/blockly/wiki/Loops#repeat';
+Blockly.Msg.STRUCTURES_WHILEUNTIL_INPUT_DO = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
+/// dropdown - Specifies that a loop should [https://github.com/google/blockly/wiki/Loops#repeat-while repeat while] the following condition is true.
+Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES = 'yes loop';
+/// dropdown - Specifies that a loop should [https://github.com/google/blockly/wiki/Loops#repeat-until repeat until] the following condition becomes true.
+Blockly.Msg.STRUCTURES_YESNO_OPERATOR_NO = 'no loop';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#repeat-while Loops#repeat-while https://github.com/google/blockly/wiki/Loops#repeat-while Loops#repeat-while].
+Blockly.Msg.STRUCTURES_WHILEUNTIL_TOOLTIP_WHILE = 'While a value is true, then do some statements.';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#repeat-until https://github.com/google/blockly/wiki/Loops#repeat-until].
+Blockly.Msg.STRUCTURES_WHILEUNTIL_TOOLTIP_UNTIL = 'While a value is false, then do some statements.';
+
+/// url - Describes 'for loops' in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/For_loop https://en.wikipedia.org/wiki/For_loop], if present.
+Blockly.Msg.STRUCTURES_FOR_HELPURL = 'https://github.com/google/blockly/wiki/Loops#count-with';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#count-with https://github.com/google/blockly/wiki/Loops#count-with].\n\nParameters:\n* %1 - the name of the loop variable.
+Blockly.Msg.STRUCTURES_FOR_TOOLTIP = 'Have the variable %1 take on the values from the start number to the end number, counting by the specified interval, and do the specified blocks.';
+/// block title - Title of [https://github.com/google/blockly/wiki/Loops#count-with count with] blocks.
+/// [[File:Blockly-count-with.png]]
+Blockly.Msg.STRUCTURES_FOR_INPUT_WITH = 'count with';
+/// block text - Starting with a (usually lower) number in a range (%1),
+/// ending with a (usually higher) number in a range (%2), and counting the
+/// iterations by a number of steps (%3).  As in
+/// [https://github.com/google/blockly/wiki/Loops#count-with
+/// https://github.com/google/blockly/wiki/Loops#count-with].
+/// [[File:Blockly-count-with.png]]
+Blockly.Msg.STRUCTURES_FOR_INPUT_FROM_TO_BY = 'from %1 to %2 by %3';
+Blockly.Msg.STRUCTURES_FOR_INPUT_DO = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
+
+/// url - Describes 'for-each loops' in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/Foreach https://en.wikipedia.org/wiki/Foreach] if present.
+Blockly.Msg.STRUCTURES_FOREACH_HELPURL = 'https://github.com/google/blockly/wiki/Loops#for-each for each block';
+/// block text - Title of [https://github.com/google/blockly/wiki/Loops#for-each for each block].
+Blockly.Msg.STRUCTURES_FOREACH_INPUT_ITEM = 'for each item';
+/// block text - Preceding the list that should be iterated over in a [https://github.com/google/blockly/wiki/Loops#for-each for each loop].
+Blockly.Msg.STRUCTURES_FOREACH_INPUT_INLIST = 'in list';
+/// block text - Following the list that should be iterated over in a [https://github.com/google/blockly/wiki/Loops#for-each for each loop].  This is empty in most, but not all, languages.
+Blockly.Msg.STRUCTURES_FOREACH_INPUT_INLIST_TAIL = '';
+Blockly.Msg.STRUCTURES_FOREACH_INPUT_DO = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
+/// block text - Description of [https://github.com/google/blockly/wiki/Loops#for-each for each blocks].\n\nParameters:\n* %1 - the name of the loop variable.
+Blockly.Msg.STRUCTURES_FOREACH_TOOLTIP = 'For each item in a list, set the variable "%1" to the item, and then do some statements.';
+
+/// url - Describes control flow in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/Control_flow https://en.wikipedia.org/wiki/Control_flow], if it exists.
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_HELPURL = 'https://github.com/google/blockly/wiki/Loops#loop-termination-blocks';
+/// dropdown - The current loop should be exited.  See [https://github.com/google/blockly/wiki/Loops#break https://github.com/google/blockly/wiki/Loops#break].
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_OPERATOR_BREAK = 'break out of loop';
+/// dropdown - The current iteration of the loop should be ended and the next should begin.  See [https://github.com/google/blockly/wiki/Loops#continue-with-next-iteration https://github.com/google/blockly/wiki/Loops#continue-with-next-iteration].
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_OPERATOR_CONTINUE = 'continue with next iteration of loop';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#break-out-of-loop https://github.com/google/blockly/wiki/Loops#break-out-of-loop].
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_TOOLTIP_BREAK = 'Break out of the containing loop.';
+/// tooltip - See [https://github.com/google/blockly/wiki/Loops#continue-with-next-iteration https://github.com/google/blockly/wiki/Loops#continue-with-next-iteration].
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_TOOLTIP_CONTINUE = 'Skip the rest of this loop, and continue with the next iteration.';
+/// warning - The user has tried placing a block outside of a loop (for each, while, repeat, etc.), but this type of block may only be used within a loop.  See [https://github.com/google/blockly/wiki/Loops#loop-termination-blocks https://github.com/google/blockly/wiki/Loops#loop-termination-blocks].
+Blockly.Msg.STRUCTURES_FLOW_STATEMENTS_WARNING = 'Warning: This block may only be used within a loop.';
+
+// Logic Blocks.
+/// url - Describes conditional statements (if-then-else) in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/If_else https://en.wikipedia.org/wiki/If_else], if present.
+Blockly.Msg.STRUCTURES_IF_HELPURL = 'https://github.com/google/blockly/wiki/IfElse';
+/// tooltip - Describes [https://github.com/google/blockly/wiki/IfElse#if-blocks 'if' blocks].  Consider using your language's translation of [https://en.wikipedia.org/wiki/If_statement https://en.wikipedia.org/wiki/If_statement], if present.
+Blockly.Msg.STRUCTURES_IF_TOOLTIP_1 = 'If a value is true, then do some statements.';
+/// tooltip - Describes [https://github.com/google/blockly/wiki/IfElse#if-else-blocks if-else blocks].  Consider using your language's translation of [https://en.wikipedia.org/wiki/If_statement https://en.wikipedia.org/wiki/If_statement], if present.
+Blockly.Msg.STRUCTURES_IF_TOOLTIP_2 = 'If a value is true, then do the first block of statements. Otherwise, do the second block of statements.';
+/// tooltip - Describes [https://github.com/google/blockly/wiki/IfElse#if-else-if-blocks if-else-if blocks].  Consider using your language's translation of [https://en.wikipedia.org/wiki/If_statement https://en.wikipedia.org/wiki/If_statement], if present.
+Blockly.Msg.STRUCTURES_IF_TOOLTIP_3 = 'If the first value is true, then do the first block of statements. Otherwise, if the second value is true, do the second block of statements.';
+/// tooltip - Describes [https://github.com/google/blockly/wiki/IfElse#if-else-if-else-blocks if-else-if-else blocks].  Consider using your language's translation of [https://en.wikipedia.org/wiki/If_statement https://en.wikipedia.org/wiki/If_statement], if present.
+Blockly.Msg.STRUCTURES_IF_TOOLTIP_4 = 'If the first value is true, then do the first block of statements. Otherwise, if the second value is true, do the second block of statements. If none of the values are true, do the last block of statements.';
+/// block text - See [https://github.com/google/blockly/wiki/IfElse https://github.com/google/blockly/wiki/IfElse].
+/// It is recommended, but not essential, that this have text in common with the translation of 'else if'
+Blockly.Msg.STRUCTURES_IF_MSG_IF = 'if';
+/// block text - See [https://github.com/google/blockly/wiki/IfElse https://github.com/google/blockly/wiki/IfElse].  The English words "otherwise if" would probably be clearer than "else if", but the latter is used because it is traditional and shorter.
+Blockly.Msg.STRUCTURES_IF_MSG_ELSEIF = 'else if';
+/// block text - See [https://github.com/google/blockly/wiki/IfElse https://github.com/google/blockly/wiki/IfElse].  The English word "otherwise" would probably be superior to "else", but the latter is used because it is traditional and shorter.
+Blockly.Msg.STRUCTURES_IF_MSG_ELSE = 'else';
+Blockly.Msg.STRUCTURES_IF_MSG_THEN = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
+Blockly.Msg.STRUCTURES_IF_IF_TITLE_IF = Blockly.Msg.STRUCTURES_IF_MSG_IF;
+/// tooltip - Describes [https://github.com/google/blockly/wiki/IfElse#block-modification if block modification].
+Blockly.Msg.STRUCTURES_IF_IF_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this if block.';
+Blockly.Msg.STRUCTURES_IF_ELSEIF_TITLE_ELSEIF = Blockly.Msg.STRUCTURES_IF_MSG_ELSEIF;
+/// tooltip - Describes the 'else if' subblock during [https://github.com/google/blockly/wiki/IfElse#block-modification if block modification].
+Blockly.Msg.STRUCTURES_IF_ELSEIF_TOOLTIP = 'Add a condition to the if block.';
+Blockly.Msg.STRUCTURES_IF_ELSE_TITLE_ELSE = Blockly.Msg.STRUCTURES_IF_MSG_ELSE;
+/// tooltip - Describes the 'else' subblock during [https://github.com/google/blockly/wiki/IfElse#block-modification if block modification].
+Blockly.Msg.STRUCTURES_IF_ELSE_TOOLTIP = 'Add a final, catch-all condition to the if block.';
+
 // Loop Blocks.
 /// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].
 Blockly.Msg.CONTROLS_REPEAT_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
@@ -148,7 +245,7 @@ Blockly.Msg.CONTROLS_REPEAT_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
 Blockly.Msg.CONTROLS_REPEAT_TITLE = 'repeat %1 times';
 /// block text - Text preceding the number of repetitions in a [https://github.com/google/blockly/wiki/Loops#repeat repeat block].
 /// (This is redundant with the previous message but is needed to support older code.)
-Blockly.Msg.CONTROLS_REPEAT_TITLE_REPEAT = 'repeat';
+Blockly.Msg.STRUCTURES_LOOP_TITLE_REPEAT = 'repeat';
 /// block text - Text following the number of times a [https://github.com/google/blockly/wiki/Loops#repeat repeat loop] should be repeated.
 /// (This is redundant but is needed to support older code.)
 Blockly.Msg.CONTROLS_REPEAT_TITLE_TIMES = 'times';

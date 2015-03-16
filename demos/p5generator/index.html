@@ -4,8 +4,30 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Generating p5dotjs</title>
   <script src="../../blockly_compressed.js"></script>
+<!--   
   <script src="../../blocks_compressed.js"></script>
   <script src="../../p5dotjs_compressed.js"></script>
+   -->
+  <script src="../../blocks/colour.js"></script>
+  <script src="../../blocks/lists.js"></script>
+  <script src="../../blocks/logic.js"></script>
+  <script src="../../blocks/loops.js"></script>
+  <script src="../../blocks/math.js"></script>
+  <script src="../../blocks/procedures.js"></script>
+  <script src="../../blocks/structures.js"></script>
+  <script src="../../blocks/text.js"></script>
+  <script src="../../blocks/variables.js"></script>
+  <script src="../../generators/p5dotjs.js"></script>
+  <script src="../../generators/p5dotjs/colour.js"></script>
+  <script src="../../generators/p5dotjs/lists.js"></script>
+  <script src="../../generators/p5dotjs/logic.js"></script>
+  <script src="../../generators/p5dotjs/loops.js"></script>
+  <script src="../../generators/p5dotjs/math.js"></script>
+  <script src="../../generators/p5dotjs/procedures.js"></script>
+  <script src="../../generators/p5dotjs/structures.js"></script>
+  <script src="../../generators/p5dotjs/text.js"></script>
+  <script src="../../generators/p5dotjs/variables.js"></script>
+
   <script src="../../msg/js/en.js"></script>
   <style>
     body {
@@ -34,6 +56,13 @@
   <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 
   <xml id="toolbox" style="display: none">
+    <category name="Structures">
+      <block type="structures_loop"></block>
+      <block type="structures_loop"></block>
+      <block type="structures_loop"></block>
+      <block type="structures_loop"></block>
+      <block type="structures_loop"></block>
+    </category>
     <category name="Logic">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
