@@ -31,16 +31,12 @@ goog.require('Blockly.p5dotjs');
 
 Blockly.p5dotjs['structures_loop'] = function(block) {
   // Do while/until loop.
-  var until = block.getFieldValue('MODE') == 'UNTIL';
-  var argument0 = Blockly.p5dotjs.valueToCode(block, 'BOOL',
-      until ? Blockly.p5dotjs.ORDER_LOGICAL_NOT :
-      Blockly.p5dotjs.ORDER_NONE) || 'false';
-  var branch = Blockly.p5dotjs.statementToCode(block, 'DO');
-  branch = Blockly.p5dotjs.addLoopTrap(branch, block.id);
-  if (until) {
-    argument0 = '!' + argument0;
+  var no = block.getFieldValue('MODE') == 'NO';
+  if (no) {
+    return 'noLoop();\n';
+  } else {
+    return 'loop();\n';
   }
-  return 'while (' + argument0 + ') {\n' + branch + '}\n';
 };
 
 Blockly.p5dotjs['controls_repeat_ext'] = function(block) {

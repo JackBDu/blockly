@@ -38,20 +38,26 @@ Blockly.Blocks['structures_loop'] = {
    */
   init: function() {
     var OPERATORS =
-        [[Blockly.Msg.STRUCTURES_LOOP_YES, 'YES'],
-         [Blockly.Msg.STRUCTURES_LOOP_NO, 'NO']];
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_LOOP_HELPURL);
+        [[Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES, 'YES'],
+         [Blockly.Msg.STRUCTURES_YESNO_OPERATOR_NO, 'NO']];
+    // this.setHelpUrl(Blockly.Msg.STRUCTURES_YESNO_HELPURL);
     this.setColour(Blockly.Blocks.structures.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_LOOP_TITLE_REPEAT)
-        .appendField(new Blockly.FieldTextInput('10',
-            Blockly.FieldTextInput.nonnegativeIntegerValidator), 'TIMES')
-        .appendField(Blockly.Msg.STRUCTURES_LOOP_TITLE_TIMES);
+    this.appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_REPEAT_TOOLTIP);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('MODE');
+      var TOOLTIPS = {
+        'YES': Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES,
+        'NO': Blockly.Msg.STRUCTURES_YESNO_OPERATOR_NO
+      };
+      return TOOLTIPS[op];
+    });
   }
 };
+
 
 Blockly.Blocks['controls_repeat_ext'] = {
   /**

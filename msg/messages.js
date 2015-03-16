@@ -157,8 +157,8 @@ Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO = 'do';
 /// tooltip - See [https://github.com/google/blockly/wiki/Loops#repeat https://github.com/google/blockly/wiki/Loops#repeat].
 Blockly.Msg.STRUCTURES_REPEAT_TOOLTIP = 'Do some statements several times.';
 /// url - Describes 'while loops' in computer programs; consider using the translation of [https://en.wikipedia.org/wiki/While_loop https://en.wikipedia.org/wiki/While_loop], if present, or [https://en.wikipedia.org/wiki/Control_flow https://en.wikipedia.org/wiki/Control_flow].
-Blockly.Msg.STRUCTURES_WHILEUNTIL_HELPURL = 'https://github.com/google/blockly/wiki/Loops#repeat';
-Blockly.Msg.STRUCTURES_WHILEUNTIL_INPUT_DO = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
+Blockly.Msg.STRUCTURES_YESNO_HELPURL = 'https://github.com/google/blockly/wiki/Loops#repeat';
+Blockly.Msg.STRUCTURES_YESNO_INPUT_DO = Blockly.Msg.STRUCTURES_REPEAT_INPUT_DO;
 /// dropdown - Specifies that a loop should [https://github.com/google/blockly/wiki/Loops#repeat-while repeat while] the following condition is true.
 Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES = 'yes loop';
 /// dropdown - Specifies that a loop should [https://github.com/google/blockly/wiki/Loops#repeat-until repeat until] the following condition becomes true.
@@ -245,7 +245,7 @@ Blockly.Msg.CONTROLS_REPEAT_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
 Blockly.Msg.CONTROLS_REPEAT_TITLE = 'repeat %1 times';
 /// block text - Text preceding the number of repetitions in a [https://github.com/google/blockly/wiki/Loops#repeat repeat block].
 /// (This is redundant with the previous message but is needed to support older code.)
-Blockly.Msg.STRUCTURES_LOOP_TITLE_REPEAT = 'repeat';
+Blockly.Msg.CONTROLS_REPEAT_TITLE_REPEAT = 'repeat';
 /// block text - Text following the number of times a [https://github.com/google/blockly/wiki/Loops#repeat repeat loop] should be repeated.
 /// (This is redundant but is needed to support older code.)
 Blockly.Msg.CONTROLS_REPEAT_TITLE_TIMES = 'times';
