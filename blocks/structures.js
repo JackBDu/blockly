@@ -38,11 +38,13 @@ Blockly.Blocks['structures_loop'] = {
    */
   init: function() {
     var OPERATORS =
-        [[Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES, 'YES'],
-         [Blockly.Msg.STRUCTURES_YESNO_OPERATOR_NO, 'NO']];
+        [[Blockly.Msg.STRUCTURES_ONOFF_OPERATOR_ON, 'YES'],
+         [Blockly.Msg.STRUCTURES_ONOFF_OPERATOR_OFF, 'NO']];
     // this.setHelpUrl(Blockly.Msg.STRUCTURES_YESNO_HELPURL);
     this.setColour(Blockly.Blocks.structures.HUE);
-    this.appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
+    this.appendValueInput('BOOL')
+        .setCheck('Boolean')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
@@ -50,8 +52,8 @@ Blockly.Blocks['structures_loop'] = {
     this.setTooltip(function() {
       var op = thisBlock.getFieldValue('MODE');
       var TOOLTIPS = {
-        'YES': Blockly.Msg.STRUCTURES_YESNO_OPERATOR_YES,
-        'NO': Blockly.Msg.STRUCTURES_YESNO_OPERATOR_NO
+        'YES': Blockly.Msg.STRUCTURES_ONOFF_OPERATOR_ON,
+        'NO': Blockly.Msg.STRUCTURES_ONOFF_OPERATOR_OFF
       };
       return TOOLTIPS[op];
     });
