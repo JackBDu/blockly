@@ -151,6 +151,10 @@
     </block>
   </xml>
 
+  <div class="iframewrapper" style="width:600px;height:480px;border:1px solid black;">
+        <iframe id="iframeResult" width="600" height="480" class="result_output" frameborder="0" name="view" src="try.html"></iframe>
+  </div>
+
   <script>
     Blockly.inject(document.getElementById('blocklyDiv'),
         {toolbox: document.getElementById('toolbox')});
@@ -176,6 +180,16 @@
       } catch (e) {
         alert(e);
       }
+
+      code = '<!DOCTYPE html><html><head><meta charset="utf-8"><script src="p5/p5.min.js"><\/script><\/head><body><script>'+code+'<\/script><\/body><\/html>';
+      window.location.href = "index.php?code=" + code; 
+      <?php
+      $file = 'try.html';
+      // Append a new person to the file
+      $current = $_GET['code'];
+      // Write the contents back to the file
+      file_put_contents($file, $current);
+      ?>
     }
   </script>
 
