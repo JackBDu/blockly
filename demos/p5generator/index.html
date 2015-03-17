@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Generating p5dotjs</title>
   <script src="../../blockly_compressed.js"></script>
+  <script src="./p5/p5.min.js"></script>
 <!--   
   <script src="../../blocks_compressed.js"></script>
   <script src="../../p5dotjs_compressed.js"></script>
@@ -61,8 +62,11 @@
     <category name="Colour">
       <block type="colour_picker"></block>
       <block type="colour_rgb"></block>
-      <block type="colour_blend"></block>
       <block type="colour_background"></block>
+      <block type="colour_fill"></block>
+      <block type="colour_no_fill"></block>
+      <block type="colour_stroke"></block>
+      <block type="colour_no_stroke"></block>
     </category>
     <category name="Structures">
       <block type="structures_preload"></block>
@@ -136,7 +140,6 @@
       </statement>
     </block>
   </xml>
-
 
   <script>
     Blockly.inject(document.getElementById('blocklyDiv'),

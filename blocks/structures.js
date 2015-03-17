@@ -150,38 +150,6 @@ Blockly.Blocks['structures_pushpop'] = {
   }
 };
 
-Blockly.Blocks['structures_push'] = {
-  /**
-   * Block for push()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_PUSH_HELPURL);
-    this.setColour(Blockly.Blocks.structures.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_PUSH_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_PUSH_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['structures_pop'] = {
-  /**
-   * Block for pop()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_POP_HELPURL);
-    this.setColour(Blockly.Blocks.structures.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_POP_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_POP_TOOLTIP);
-  }
-};
-
 Blockly.Blocks['structures_redraw'] = {
   /**
    * Block for redraw()

@@ -46,21 +46,6 @@ Blockly.Blocks['colour_picker'] = {
   }
 };
 
-Blockly.Blocks['colour_random'] = {
-  /**
-   * Block for random colour.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.COLOUR_RANDOM_HELPURL);
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.COLOUR_RANDOM_TITLE);
-    this.setOutput(true, 'Colour');
-    this.setTooltip(Blockly.Msg.COLOUR_RANDOM_TOOLTIP);
-  }
-};
-
 Blockly.Blocks['colour_rgb'] = {
   /**
    * Block for composing a colour from RGB components.
@@ -87,40 +72,13 @@ Blockly.Blocks['colour_rgb'] = {
   }
 };
 
-Blockly.Blocks['colour_blend'] = {
-  /**
-   * Block for blending two colours together.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.COLOUR_BLEND_HELPURL);
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.appendValueInput('COLOUR1')
-        .setCheck('Colour')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_BLEND_TITLE)
-        .appendField(Blockly.Msg.COLOUR_BLEND_COLOUR1);
-    this.appendValueInput('COLOUR2')
-        .setCheck('Colour')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_BLEND_COLOUR2);
-    this.appendValueInput('RATIO')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_BLEND_RATIO);
-    this.setOutput(true, 'Colour');
-    this.setTooltip(Blockly.Msg.COLOUR_BLEND_TOOLTIP);
-  }
-};
-
-
 /**
  * @fileoverview Colour Setting blocks for Blockly.
  * @author jackbdu@nyu.edu (Jack B. Du)
  */
 Blockly.Blocks['colour_background'] = {
   /**
-   * Block for remove()
+   * Block for background()
    * @this Blockly.Block
    */
   init: function() {
@@ -131,5 +89,69 @@ Blockly.Blocks['colour_background'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.COLOUR_BACKGROUND_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['colour_fill'] = {
+  /**
+   * Block for fill()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_FILL_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_FILL_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_FILL_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['colour_stroke'] = {
+  /**
+   * Block for stroke()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_STROKE_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_STROKE_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_STROKE_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['colour_no_fill'] = {
+  /**
+   * Block for noFill()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_NOFILL_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.COLOUR_NOFILL_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_NOFILL_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['colour_no_stroke'] = {
+  /**
+   * Block for noStroke()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_NOSTROKE_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.COLOUR_NOSTROKE_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_NOSTROKE_TOOLTIP);
   }
 };
