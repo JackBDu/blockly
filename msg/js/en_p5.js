@@ -6,25 +6,16 @@ goog.provide('Blockly.Msg.en');
 
 goog.require('Blockly.Msg');
 
-
-Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE = "create canvas";
-Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL = "http://p5js.org/reference/#/p5/createCanvas";
-Blockly.Msg.RENDERINGS_CREATECANVAS_TOOLTIP = "Creates a canvas element in the document, and sets the dimensions of it in pixels";
-Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE = "resize canvas";
-Blockly.Msg.RENDERINGS_RESIZECANVAS_HELPURL = "http://p5js.org/reference/#/p5/resizeCanvas";
-Blockly.Msg.RENDERINGS_RESIZECANVAS_TOOLTIP = "Resizes the canvas to given width and height";
-Blockly.Msg.RENDERINGS_NOCANVAS_TITLE = "remove canvas";
-Blockly.Msg.RENDERINGS_NOCANVAS_HELPURL = "http://p5js.org/reference/#/p5/noCanvas";
-Blockly.Msg.RENDERINGS_NOCANVAS_TOOLTIP = "Removes the default canvas for a p5 sketch that doesn't require a canvas";
-Blockly.Msg.RENDERINGS_MULTIPLICATION_SYMBOL = "x";
-
-
 Blockly.Msg.ADD_COMMENT = "Add Comment";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
 Blockly.Msg.CHAT = "Chat with your collaborator by typing in this box!";
 Blockly.Msg.COLLAPSE_ALL = "Collapse Blocks";
 Blockly.Msg.COLLAPSE_BLOCK = "Collapse Block";
+
+Blockly.Msg.COLOUR_BACKGROUND_TITLE = 'set background';
+Blockly.Msg.COLOUR_BACKGROUND_HELPURL = 'http://p5js.org/reference/#/p5/background';
+Blockly.Msg.COLOUR_BACKGROUND_TOOLTIP = 'Sets the color used for the background of the p5.js canvas';
 Blockly.Msg.COLOUR_BLEND_COLOUR1 = "colour 1";
 Blockly.Msg.COLOUR_BLEND_COLOUR2 = "colour 2";
 Blockly.Msg.COLOUR_BLEND_HELPURL = "http://meyerweb.com/eric/tools/color-blend/";
@@ -42,6 +33,7 @@ Blockly.Msg.COLOUR_RGB_HELPURL = "http://www.december.com/html/spec/colorper.htm
 Blockly.Msg.COLOUR_RGB_RED = "red";
 Blockly.Msg.COLOUR_RGB_TITLE = "colour with";
 Blockly.Msg.COLOUR_RGB_TOOLTIP = "Create a colour with the specified amount of red, green, and blue. All values must be between 0 and 100.";
+
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "break out of loop";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "continue with next iteration of loop";
@@ -308,6 +300,16 @@ Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TOOLTIP = "Add, remove, or reorder input
 Blockly.Msg.REMOVE_COMMENT = "Remove Comment";
 Blockly.Msg.RENAME_VARIABLE = "Rename variable...";
 Blockly.Msg.RENAME_VARIABLE_TITLE = "Rename all '%1' variables to:";
+Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL = "http://p5js.org/reference/#/p5/createCanvas";
+Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE = "create canvas";
+Blockly.Msg.RENDERINGS_CREATECANVAS_TOOLTIP = "Creates a canvas element in the document, and sets the dimensions of it in pixels";
+Blockly.Msg.RENDERINGS_MULTIPLICATION_SYMBOL = "x";
+Blockly.Msg.RENDERINGS_NOCANVAS_HELPURL = "http://p5js.org/reference/#/p5/noCanvas";
+Blockly.Msg.RENDERINGS_NOCANVAS_TITLE = "remove canvas";
+Blockly.Msg.RENDERINGS_NOCANVAS_TOOLTIP = "Removes the default canvas for a p5 sketch that doesn't require a canvas";
+Blockly.Msg.RENDERINGS_RESIZECANVAS_HELPURL = "http://p5js.org/reference/#/p5/resizeCanvas";
+Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE = "resize canvas";
+Blockly.Msg.RENDERINGS_RESIZECANVAS_TOOLTIP = "Resizes the canvas to given width and height";
 Blockly.Msg.STRUCTURES_DRAW_HELPURL = "http://p5js.org/reference/#/p5/draw";
 Blockly.Msg.STRUCTURES_DRAW_TITLE = "draw";
 Blockly.Msg.STRUCTURES_DRAW_TOOLTIP = "Called directly after setup()";

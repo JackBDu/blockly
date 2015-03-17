@@ -55,19 +55,7 @@ Blockly.p5dotjs['colour_rgb'] = function(block) {
       Blockly.p5dotjs.ORDER_COMMA) || 0;
   var blue = Blockly.p5dotjs.valueToCode(block, 'BLUE',
       Blockly.p5dotjs.ORDER_COMMA) || 0;
-  var functionName = Blockly.p5dotjs.provideFunction_(
-      'colour_rgb',
-      [ 'function ' + Blockly.p5dotjs.FUNCTION_NAME_PLACEHOLDER_ +
-          '(r, g, b) {',
-        '  r = Math.max(Math.min(Number(r), 100), 0) * 2.55;',
-        '  g = Math.max(Math.min(Number(g), 100), 0) * 2.55;',
-        '  b = Math.max(Math.min(Number(b), 100), 0) * 2.55;',
-        '  r = (\'0\' + (Math.round(r) || 0).toString(16)).slice(-2);',
-        '  g = (\'0\' + (Math.round(g) || 0).toString(16)).slice(-2);',
-        '  b = (\'0\' + (Math.round(b) || 0).toString(16)).slice(-2);',
-        '  return \'#\' + r + g + b;',
-        '}']);
-  var code = functionName + '(' + red + ', ' + green + ', ' + blue + ')';
+  var code = red + ', ' + green + ', ' + blue;
   return [code, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
@@ -100,4 +88,15 @@ Blockly.p5dotjs['colour_blend'] = function(block) {
         '}']);
   var code = functionName + '(' + c1 + ', ' + c2 + ', ' + ratio + ')';
   return [code, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
+};
+/**
+ * @fileoverview Generating p5dotjs for colour setting blocks.
+ * @author jackbdu@nyu.edu (Jack B. Du)
+ */
+ Blockly.p5dotjs['colour_background'] = function(block) {
+  // Compose a colour from RGB components expressed as percentages.
+  var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR',
+      Blockly.p5dotjs.ORDER_COMMA) || 0;
+  var code = 'background('+ colour +');\n';
+  return code;
 };

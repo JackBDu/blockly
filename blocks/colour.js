@@ -112,3 +112,24 @@ Blockly.Blocks['colour_blend'] = {
     this.setTooltip(Blockly.Msg.COLOUR_BLEND_TOOLTIP);
   }
 };
+
+
+/**
+ * @fileoverview Colour Setting blocks for Blockly.
+ * @author jackbdu@nyu.edu (Jack B. Du)
+ */
+Blockly.Blocks['colour_background'] = {
+  /**
+   * Block for remove()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_BACKGROUND_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_BACKGROUND_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_BACKGROUND_TOOLTIP);
+  }
+};

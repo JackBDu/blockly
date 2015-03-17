@@ -30,16 +30,16 @@ goog.require('Blockly.p5dotjs');
 
 Blockly.p5dotjs['renderings_create_canvas'] = function(block) {
   // createCanvas()
-  var width = Blockly.p5dotjs.valueToCode(block, 'WIDTH', Blockly.p5dotjs.ORDER_ATOMIC);
-  var height = Blockly.p5dotjs.valueToCode(block, 'HEIGHT', Blockly.p5dotjs.ORDER_ATOMIC);
+  var width = Blockly.p5dotjs.valueToCode(block, 'WIDTH', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var height = Blockly.p5dotjs.valueToCode(block, 'HEIGHT', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var code = 'createCanvas('+width+', '+height+');\n';
   return code;
 };
 
 Blockly.p5dotjs['renderings_resize_canvas'] = function(block) {
   // resizeCanvas()
-  var width = Blockly.p5dotjs.valueToCode(block, 'WIDTH', Blockly.p5dotjs.ORDER_ATOMIC);
-  var height = Blockly.p5dotjs.valueToCode(block, 'HEIGHT', Blockly.p5dotjs.ORDER_ATOMIC);
+  var width = Blockly.p5dotjs.valueToCode(block, 'WIDTH', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var height = Blockly.p5dotjs.valueToCode(block, 'HEIGHT', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var code = 'resizeCanvas('+width+', '+height+');\n';
   return code;
 };
