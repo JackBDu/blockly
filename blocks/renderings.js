@@ -31,18 +31,25 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.renderings.HUE = 60;
 
-Blockly.Blocks['renderings_preload'] = {
+Blockly.Blocks['renderings_create_canvas'] = {
   /**
    * Block for preload()
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_PRELOAD_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
+    this.setHelpUrl(Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL);
+    this.setColour(20);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_PRELOAD_TITLE);
-    this.appendStatementInput('DO')
-    this.setTooltip(Blockly.Msg.STRUCTURES_PRELOAD_TOOLTIP);
+        .appendField(Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE);
+    this.appendValueInput("WIDTH")
+        .setCheck("Number");
+    this.appendValueInput("HEIGHT")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.RENDERINGS_MULTIPLICATION_SYMBOL);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.RENDERINGS_CREATECANVAS_TOOLTIP);
   }
 };
 

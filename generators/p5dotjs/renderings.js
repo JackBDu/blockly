@@ -28,11 +28,11 @@ goog.provide('Blockly.p5dotjs.renderings');
 
 goog.require('Blockly.p5dotjs');
 
-Blockly.p5dotjs['renderings_preload'] = function(block) {
+Blockly.p5dotjs['renderings_create_canvas'] = function(block) {
   // preload()
-  var branch = Blockly.p5dotjs.statementToCode(block, 'DO');
-  var code = 'function preload(){\n' +
-      branch + '}\n';
+  var width = Blockly.p5dotjs.valueToCode(block, 'WIDTH', Blockly.p5dotjs.ORDER_ATOMIC);
+  var height = Blockly.p5dotjs.valueToCode(block, 'HEIGHT', Blockly.p5dotjs.ORDER_ATOMIC);
+  var code = 'createCanvas('+width+', '+height+');\n';
   return code;
 };
 

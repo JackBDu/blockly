@@ -7,9 +7,10 @@ goog.provide('Blockly.Msg.en');
 goog.require('Blockly.Msg');
 
 
-Blockly.Msg.RENDERINGS_PRELOAD_TITLE = "preload";
-Blockly.Msg.RENDERINGS_PRELOAD_HELPURL = "http://p5js.org/reference/#/p5/preload";
-Blockly.Msg.RENDERINGS_PRELOAD_TOOLTIP = "Called directly before setup()";
+Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE = "create canvas";
+Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL = "http://p5js.org/reference/#/p5/createCanvas";
+Blockly.Msg.RENDERINGS_CREATECANVAS_TOOLTIP = "Creates a canvas element in the document, and sets the dimensions of it in pixels";
+Blockly.Msg.RENDERINGS_MULTIPLICATION_SYMBOL = "x";
 Blockly.Msg.RENDERINGS_SETUP_TITLE = "setup";
 Blockly.Msg.RENDERINGS_SETUP_HELPURL = "http://p5js.org/reference/#/p5/setup";
 Blockly.Msg.RENDERINGS_SETUP_TOOLTIP = "Called once when the program starts";
