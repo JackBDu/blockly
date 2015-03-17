@@ -20,7 +20,7 @@
 
 /**
  * @fileoverview Generating p5dotjs for structure blocks.
- * @author fraser@google.com (Neil Fraser)
+ * @author jackbdu@nyu.edu (Jack B. Du)
  */
 'use strict';
 
@@ -28,15 +28,28 @@ goog.provide('Blockly.p5dotjs.structures');
 
 goog.require('Blockly.p5dotjs');
 
+Blockly.p5dotjs['structures_preload'] = function(block) {
+  // preload()
+  var branch = Blockly.p5dotjs.statementToCode(block, 'DO');
+  var code = 'function preload(){\n' +
+      branch + '}\n';
+  return code;
+};
 
-Blockly.p5dotjs['structures_loop'] = function(block) {
-  // loop()/noLoop()
-  var no = block.getFieldValue('MODE') == 'NO';
-  if (no) {
-    return 'noLoop();\n';
-  } else {
-    return 'loop();\n';
-  }
+Blockly.p5dotjs['structures_setup'] = function(block) {
+  // setup()
+  var branch = Blockly.p5dotjs.statementToCode(block, 'DO');
+  var code = 'function setup(){\n' +
+      branch + '}\n';
+  return code;
+};
+
+Blockly.p5dotjs['structures_draw'] = function(block) {
+  // draw()
+  var branch = Blockly.p5dotjs.statementToCode(block, 'DO');
+  var code = 'function draw(){\n' +
+      branch + '}\n';
+  return code;
 };
 
 Blockly.p5dotjs['structures_remove'] = function(block) {
@@ -44,7 +57,27 @@ Blockly.p5dotjs['structures_remove'] = function(block) {
     return 'remove();\n';
 };
 
-Blockly.p5dotjs['structures_setup'] = function(block) {
-  // setup()
-    return 'function setup(){\n'+'}\n';
+Blockly.p5dotjs['structures_loop'] = function(block) {
+  // loop()/noLoop()
+  var loop = block.getFieldValue('MODE') == 'ON';
+  if (loop) {
+    return 'loop();\n';
+  } else {
+    return 'noLoop();\n';
+  }
+};
+
+Blockly.p5dotjs['structures_pushpop'] = function(block) {
+  // push()/pop()
+  var push = block.getFieldValue('MODE') == 'PUSH';
+  if (push) {
+    return 'push();\n';
+  } else {
+    return 'pop();\n';
+  }
+};
+
+Blockly.p5dotjs['structures_redraw'] = function(block) {
+  // redraw()
+    return 'redraw();\n';
 };
