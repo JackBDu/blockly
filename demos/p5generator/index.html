@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Generating p5dotjs</title>
   <script src="../../blockly_compressed.js"></script>
-  <script src="./p5/p5.min.js"></script>
 <!--   
   <script src="../../blocks_compressed.js"></script>
   <script src="../../p5dotjs_compressed.js"></script>
    -->
   <script src="../../blocks/colour.js"></script>
+  <script src="../../blocks/environment.js"></script>
   <script src="../../blocks/lists.js"></script>
   <script src="../../blocks/logic.js"></script>
   <script src="../../blocks/loops.js"></script>
@@ -21,6 +21,7 @@
   <script src="../../blocks/variables.js"></script>
   <script src="../../generators/p5dotjs.js"></script>
   <script src="../../generators/p5dotjs/colour.js"></script>
+  <script src="../../generators/p5dotjs/environment.js"></script>
   <script src="../../generators/p5dotjs/lists.js"></script>
   <script src="../../generators/p5dotjs/logic.js"></script>
   <script src="../../generators/p5dotjs/loops.js"></script>
@@ -68,6 +69,11 @@
       <block type="colour_stroke"></block>
       <block type="colour_no_stroke"></block>
     </category>
+    <category name="Environment">
+      <block type="environment_display"></block>
+      <block type="environment_window"></block>
+      <block type="environment_canvas"></block>
+    </category>
     <category name="Structures">
       <block type="structures_preload"></block>
       <block type="structures_setup"></block>
@@ -108,6 +114,10 @@
       <block type="text"></block>
       <block type="text_length"></block>
       <block type="text_print"></block>
+    </category>
+    <category name="Variables">
+      <block type="variables_get"></block>
+      <block type="variables_set"></block>
     </category>
   </xml>
 
