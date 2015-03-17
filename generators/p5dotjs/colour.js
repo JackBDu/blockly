@@ -31,8 +31,17 @@ goog.require('Blockly.p5dotjs');
 
 Blockly.p5dotjs['colour_picker'] = function(block) {
   // Colour picker.
-  var code = '\'' + block.getFieldValue('COLOUR') + '\'';
-  return [code, Blockly.p5dotjs.ORDER_ATOMIC];
+  function hexToR(h) {return parseInt((cutHex(h)).substring(0,2),16)}
+  function hexToG(h) {return parseInt((cutHex(h)).substring(2,4),16)}
+  function hexToB(h) {return parseInt((cutHex(h)).substring(4,6),16)}
+  function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
+  var hex = block.getFieldValue('COLOUR')
+  hex = cutHex(hex)
+  var red = hexToR(hex);
+  var green = hexToG(hex);
+  var blue = hexToB(hex);
+  var color = red + ', ' + green + ', ' + blue;
+  return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
 Blockly.p5dotjs['colour_random'] = function(block) {
@@ -55,8 +64,8 @@ Blockly.p5dotjs['colour_rgb'] = function(block) {
       Blockly.p5dotjs.ORDER_COMMA) || 0;
   var blue = Blockly.p5dotjs.valueToCode(block, 'BLUE',
       Blockly.p5dotjs.ORDER_COMMA) || 0;
-  var code = red + ', ' + green + ', ' + blue;
-  return [code, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
+  var color = red + ', ' + green + ', ' + blue;
+  return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
 Blockly.p5dotjs['colour_blend'] = function(block) {
