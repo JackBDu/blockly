@@ -33,12 +33,12 @@ Blockly.Blocks.renderings.HUE = 60;
 
 Blockly.Blocks['renderings_create_canvas'] = {
   /**
-   * Block for preload()
+   * Block for creatCanvas()
    * @this Blockly.Block
    */
   init: function() {
     this.setHelpUrl(Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL);
-    this.setColour(20);
+    this.setColour(Blockly.Blocks.renderings.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE);
     this.appendValueInput("WIDTH")
@@ -53,154 +53,40 @@ Blockly.Blocks['renderings_create_canvas'] = {
   }
 };
 
-Blockly.Blocks['renderings_setup'] = {
+Blockly.Blocks['renderings_resize_canvas'] = {
   /**
-   * Block for setup()
+   * Block for resizeCanvas()
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_SETUP_HELPURL);
+    this.setHelpUrl(Blockly.Msg.RENDERINGS_RESIZECANVAS_HELPURL);
     this.setColour(Blockly.Blocks.renderings.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_SETUP_TITLE);
-    this.appendStatementInput('DO')
-    this.setTooltip(Blockly.Msg.STRUCTURES_SETUP_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['renderings_draw'] = {
-  /**
-   * Block for draw()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_DRAW_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_DRAW_TITLE);
-    this.appendStatementInput('DO')
-    this.setTooltip(Blockly.Msg.STRUCTURES_DRAW_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['renderings_remove'] = {
-  /**
-   * Block for remove()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_REMOVE_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_REMOVE_TITLE);
+        .appendField(Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE);
+    this.appendValueInput("WIDTH")
+        .setCheck("Number");
+    this.appendValueInput("HEIGHT")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.RENDERINGS_MULTIPLICATION_SYMBOL);
+    this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_REMOVE_TOOLTIP);
+    this.setTooltip(Blockly.Msg.RENDERINGS_RESIZECANVAS_TOOLTIP);
   }
 };
 
-Blockly.Blocks['renderings_loop'] = {
+Blockly.Blocks['renderings_no_canvas'] = {
   /**
-   * Block for loop() and noLoop()
+   * Block for noCanvas()
    * @this Blockly.Block
    */
   init: function() {
-    var OPERATORS =
-        [[Blockly.Msg.STRUCTURES_LOOP_OPERATOR_ON, 'ON'],
-         [Blockly.Msg.STRUCTURES_LOOP_OPERATOR_OFF, 'OFF']];
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_LOOP_HELPURL);
+    this.setHelpUrl(Blockly.Msg.RENDERINGS_NOCANVAS_HELPURL);
     this.setColour(Blockly.Blocks.renderings.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_LOOP_TITLE)
-        .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
+        .appendField(Blockly.Msg.RENDERINGS_NOCANVAS_TITLE);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
-    this.setTooltip(function() {
-      var op = thisBlock.getFieldValue('MODE');
-      var TOOLTIPS = {
-        'ON': Blockly.Msg.STRUCTURES_LOOP_TOOLTIP_ON,
-        'OFF': Blockly.Msg.STRUCTURES_LOOP_TOOLTIP_OFF
-      };
-      return TOOLTIPS[op];
-    });
-  }
-};
-
-Blockly.Blocks['renderings_pushpop'] = {
-  /**
-   * Block for push() and pop()
-   * @this Blockly.Block
-   */
-  init: function() {
-    var OPERATORS =
-        [[Blockly.Msg.STRUCTURES_PUSHPOP_OPERATOR_PUSH, 'PUSH'],
-         [Blockly.Msg.STRUCTURES_PUSHPOP_OPERATOR_POP, 'POP']];
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_PUSHPOP_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_PUSHPOP_TITLE)
-        .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
-    this.setTooltip(function() {
-      var op = thisBlock.getFieldValue('MODE');
-      var TOOLTIPS = {
-        'PUSH': Blockly.Msg.STRUCTURES_PUSHPOP_TOOLTIP_PUSH,
-        'POP': Blockly.Msg.STRUCTURES_PUSHPOP_TOOLTIP_POP
-      };
-      return TOOLTIPS[op];
-    });
-  }
-};
-
-Blockly.Blocks['renderings_push'] = {
-  /**
-   * Block for push()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_PUSH_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_PUSH_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_PUSH_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['renderings_pop'] = {
-  /**
-   * Block for pop()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_POP_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_POP_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_POP_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['renderings_redraw'] = {
-  /**
-   * Block for redraw()
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.STRUCTURES_REDRAW_HELPURL);
-    this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.STRUCTURES_REDRAW_TITLE);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.STRUCTURES_REDRAW_TOOLTIP);
+    this.setTooltip(Blockly.Msg.RENDERINGS_NOCANVAS_TOOLTIP);
   }
 };

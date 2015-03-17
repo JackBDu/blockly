@@ -69,12 +69,8 @@
     </category>
     <category name="Renderings">
       <block type="renderings_create_canvas"></block>
-      <block type="renderings_setup"></block>
-      <block type="renderings_draw"></block>
-      <block type="renderings_remove"></block>
-      <block type="renderings_loop"></block>
-      <block type="renderings_pushpop"></block>
-      <block type="renderings_redraw"></block>
+      <block type="renderings_resize_canvas"></block>
+      <block type="renderings_no_canvas"></block>
     </category>
     <category name="Logic">
       <block type="controls_if"></block>
@@ -106,53 +102,26 @@
   </xml>
 
   <xml id="startBlocks" style="display: none">
-    <block type="controls_if" inline="false" x="20" y="20">
-      <mutation else="1"></mutation>
-      <value name="IF0">
-        <block type="logic_compare" inline="true">
-          <field name="OP">EQ</field>
-          <value name="A">
-            <block type="math_arithmetic" inline="true">
-              <field name="OP">MULTIPLY</field>
-              <value name="A">
-                <block type="math_number">
-                  <field name="NUM">6</field>
-                </block>
-              </value>
-              <value name="B">
-                <block type="math_number">
-                  <field name="NUM">7</field>
-                </block>
-              </value>
-            </block>
-          </value>
-          <value name="B">
+    <block type="structures_setup" x="20" y="20">
+      <statement name="DO">
+        <block type="renderings_create_canvas" inline="true">
+          <value name="WIDTH">
             <block type="math_number">
-              <field name="NUM">42</field>
+              <field name="NUM">100</field>
             </block>
           </value>
-        </block>
-      </value>
-      <statement name="DO0">
-        <block type="text_print" inline="false">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT">Don't panic</field>
-            </block>
-          </value>
-        </block>
-      </statement>
-      <statement name="ELSE">
-        <block type="text_print" inline="false">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT">Panic</field>
+          <value name="HEIGHT">
+            <block type="math_number">
+              <field name="NUM">100</field>
             </block>
           </value>
         </block>
       </statement>
     </block>
+    <block type="structures_draw" x="20" y="120">
+    </block>
   </xml>
+
 
   <script>
     Blockly.inject(document.getElementById('blocklyDiv'),
