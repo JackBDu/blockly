@@ -265,7 +265,7 @@ Code.init = function() {
        media: '../../media/',
        toolbox: toolbox});
 
-  // Add to reserved word list: Local variables in execution evironment (runJS)
+  // Add to reserved word list: Local variables in execution evironment (runP5)
   // and the infinite loop detection function.
   Blockly.p5dotjs.addReservedWords('code,timeouts,checkTimeout');
 
@@ -281,7 +281,7 @@ Code.init = function() {
 
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
-  Code.bindClick('runButton', Code.runJS);
+  Code.bindClick('runButton', Code.runP5);
 
   for (var i = 0; i < Code.TABS_.length; i++) {
     var name = Code.TABS_[i];
@@ -325,26 +325,23 @@ Code.initLanguage = function() {
   }
 };
 
-/**
- * Execute the user's code.
- * Just a quick and dirty eval.  Catch infinite loops.
- */
-Code.runJS = function() {
-  Blockly.p5dotjs.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
-  var timeouts = 0;
-  var checkTimeout = function() {
-    if (timeouts++ > 1000000) {
-      throw MSG['timeout'];
-    }
-  };
-  var code = Blockly.p5dotjs.workspaceToCode();
-  Blockly.p5dotjs.INFINITE_LOOP_TRAP = null;
-  try {
-    eval(code);
-  } catch (e) {
-    alert(MSG['badCode'].replace('%1', e));
-  }
-};
+// /**
+//  * Execute the user's code.
+//  * Just a quick and dirty eval.  Catch infinite loops.
+//  */
+// Code.runP5 = function() {
+//   var code = Blockly.p5dotjs.workspaceToCode();
+//   code = '<!DOCTYPE html><html><head><meta charset="utf-8"><script src="p5/p5.min.js"><\/script><\/head><body><script>'+code+'<\/script><\/body><\/html>';
+//   document.getElementById("code").value = code;
+//   document.getElementById('runCode').submit();
+//   <?php
+//   $file = 'try.html';
+//   // Append a new person to the file
+//   $current = $_REQUEST['code'];
+//   // Write the contents back to the file
+//   file_put_contents($file, $current);
+//   ?>
+// };
 
 /**
  * Discard all blocks from the workspace.

@@ -5,7 +5,7 @@
   <meta name="google" value="notranslate">
   <title>Blockly Demo:</title>
   <link rel="stylesheet" href="style.css">
-  <script src="/storage.js"></script>
+  <script src="../../appengine/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks/colour.js"></script>
   <script src="../../blocks/environment.js"></script>
@@ -37,7 +37,10 @@
   <script src="code.js"></script>
 </head>
 <body>
-  <table width="100%" height="100%">
+  <table id="blockly_area">
+    <div id="iframeDiv">
+          <iframe id="iframeResult" class="result_output" frameborder="0" name="view" src="p5.htm"></iframe>
+    </div>
     <tr>
       <td>
         <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
@@ -146,6 +149,29 @@
     </category>
   </xml>
   </xml>
+
+  <form id="runCode" method="post">
+    <input name="code" id="code" type="hidden" value="">
+  </form>
+  <script type="text/javascript">
+  /**
+   * Execute the user's code.
+   * Just a quick and dirty eval.  Catch infinite loops.
+   */
+  Code.runP5 = function() {
+    var code = Blockly.p5dotjs.workspaceToCode();
+    code = '<!DOCTYPE html><html><head><meta charset="utf-8"><script src="../p5generator/p5/p5.min.js"><\/script><\/head><body><script>'+code+'<\/script><\/body><\/html>';
+    document.getElementById("code").value = code;
+    document.getElementById('runCode').submit();
+    <?php
+    $file = 'p5.htm';
+    // Append a new person to the file
+    $current = $_REQUEST['code'];
+    // Write the contents back to the file
+    file_put_contents($file, $current);
+    ?>
+  };
+  </script>
 
 </body>
 </html>
