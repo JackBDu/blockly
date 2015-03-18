@@ -39,9 +39,8 @@ Blockly.Blocks['renderings_create_canvas'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.RENDERINGS_CREATECANVAS_HELPURL);
     this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE);
     this.appendValueInput("WIDTH")
+        .appendField(Blockly.Msg.RENDERINGS_CREATECANVAS_TITLE)
         .setCheck("Number");
     this.appendValueInput("HEIGHT")
         .setCheck("Number")
@@ -61,9 +60,8 @@ Blockly.Blocks['renderings_resize_canvas'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.RENDERINGS_RESIZECANVAS_HELPURL);
     this.setColour(Blockly.Blocks.renderings.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE);
     this.appendValueInput("WIDTH")
+        .appendField(Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE)
         .setCheck("Number");
     this.appendValueInput("HEIGHT")
         .setCheck("Number")

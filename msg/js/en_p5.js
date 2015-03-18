@@ -6,6 +6,16 @@ goog.provide('Blockly.Msg.en');
 
 goog.require('Blockly.Msg');
 
+Blockly.Msg.SHAPES_POINT_HELPURL = "http://p5js.org/reference/#/p5/point";
+Blockly.Msg.SHAPES_POINT_TITLE = "draw point at";
+Blockly.Msg.SHAPES_POINT_TOOLTIP = "Draws a point, a coordinate in space at the dimension of one pixel";
+Blockly.Msg.SHAPES_X_SYMBOL = "x";
+Blockly.Msg.SHAPES_Y_SYMBOL = "y";
+Blockly.Msg.SHAPES_LINE_HELPURL = "http://p5js.org/reference/#/p5/line";
+Blockly.Msg.SHAPES_LINE_TITLE1 = "draw line from";
+Blockly.Msg.SHAPES_LINE_TITLE2 = "to";
+Blockly.Msg.SHAPES_LINE_TOOLTIP = "Draws a line (a direct path between two points) to the screen"
+
 Blockly.Msg.ADD_COMMENT = "Add Comment";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
