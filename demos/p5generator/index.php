@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Generating p5dotjs</title>
   <script src="../../blockly_compressed.js"></script>
+  <script src="p5/p5.min.js"></script>
 <!--   
   <script src="../../blocks_compressed.js"></script>
   <script src="../../p5dotjs_compressed.js"></script>
@@ -16,6 +17,7 @@
   <script src="../../blocks/math.js"></script>
   <script src="../../blocks/procedures.js"></script>
   <script src="../../blocks/renderings.js"></script>
+  <script src="../../blocks/shapes.js"></script>
   <script src="../../blocks/structures.js"></script>
   <script src="../../blocks/text.js"></script>
   <script src="../../blocks/variables.js"></script>
@@ -28,6 +30,7 @@
   <script src="../../generators/p5dotjs/math.js"></script>
   <script src="../../generators/p5dotjs/procedures.js"></script>
   <script src="../../generators/p5dotjs/renderings.js"></script>
+  <script src="../../generators/p5dotjs/shapes.js"></script>
   <script src="../../generators/p5dotjs/structures.js"></script>
   <script src="../../generators/p5dotjs/text.js"></script>
   <script src="../../generators/p5dotjs/variables.js"></script>
@@ -53,11 +56,14 @@
   <p>&rarr; More info on <a href="https://developers.google.com/blockly/installation/code-generators">Code Generators</a>...</p>
 
   <p>
-    <button onclick="showCode()">Show p5dotjs</button>
-    <button onclick="runCode()">Run p5dotjs</button>
+      <button onclick="showCode()">Show p5dotjs</button>
+      <button onclick="runCode()">Run p5dotjs</button>
   </p>
 
-  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  <div id="blocklyDiv" style="height: 480px; width: 49%; float: left;"></div>
+  <div id="iframeDiv" style="width: 49%; height: 480px; border:1px solid lightgray; float: left;margin-left:1%;">
+        <iframe id="iframeResult" width="600" height="480" class="result_output" frameborder="0" name="view" src="try.html"></iframe>
+  </div>
 
   <xml id="toolbox" style="display: none">
     <category name="Colour">
@@ -73,6 +79,10 @@
       <block type="environment_display"></block>
       <block type="environment_window"></block>
       <block type="environment_canvas"></block>
+    </category>
+    <category name="Shapes">
+      <block type="shapes_point"></block>
+      <block type="shapes_line"></block>
     </category>
     <category name="Structures">
       <block type="structures_preload"></block>
@@ -151,9 +161,9 @@
     </block>
   </xml>
 
-  <div class="iframewrapper" style="width:600px;height:480px;border:1px solid black;">
-        <iframe id="iframeResult" width="600" height="480" class="result_output" frameborder="0" name="view" src="try.html"></iframe>
-  </div>
+  <form id="runCode">
+    <input name="code" id="code" type="hidden" value="">
+  </form>
 
   <script>
     Blockly.inject(document.getElementById('blocklyDiv'),
@@ -170,23 +180,15 @@
 
     function runCode() {
       // Generate p5dotjs code and run it.
-      window.LoopTrap = 1000;
-      Blockly.p5dotjs.INFINITE_LOOP_TRAP =
-          'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
       var code = Blockly.p5dotjs.workspaceToCode();
-      Blockly.p5dotjs.INFINITE_LOOP_TRAP = null;
-      try {
-        eval(code);
-      } catch (e) {
-        alert(e);
-      }
-
       code = '<!DOCTYPE html><html><head><meta charset="utf-8"><script src="p5/p5.min.js"><\/script><\/head><body><script>'+code+'<\/script><\/body><\/html>';
-      window.location.href = "index.php?code=" + code; 
+      document.getElementById("code").value = code;
+      document.getElementById('runCode').submit();
       <?php
       $file = 'try.html';
       // Append a new person to the file
-      $current = $_GET['code'];
+      $current = $_REQUEST['code'];
+      echo $current;
       // Write the contents back to the file
       file_put_contents($file, $current);
       ?>
