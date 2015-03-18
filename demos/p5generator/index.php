@@ -83,6 +83,7 @@
     <category name="Shapes">
       <block type="shapes_point"></block>
       <block type="shapes_line"></block>
+      <block type="shapes_ellipse"></block>
     </category>
     <category name="Structures">
       <block type="structures_preload"></block>
@@ -161,7 +162,7 @@
     </block>
   </xml>
 
-  <form id="runCode">
+  <form id="runCode" method="post">
     <input name="code" id="code" type="hidden" value="">
   </form>
 

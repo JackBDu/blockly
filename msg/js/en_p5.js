@@ -15,6 +15,9 @@ Blockly.Msg.SHAPES_LINE_HELPURL = "http://p5js.org/reference/#/p5/line";
 Blockly.Msg.SHAPES_LINE_TITLE1 = "draw line from";
 Blockly.Msg.SHAPES_LINE_TITLE2 = "to";
 Blockly.Msg.SHAPES_LINE_TOOLTIP = "Draws a line (a direct path between two points) to the screen"
+Blockly.Msg.SHAPES_ELLIPSE_HELPURL = "http://p5js.org/reference/#/p5/ellipse";
+Blockly.Msg.SHAPES_ELLIPSE_TITLE = "draw ellipse";
+Blockly.Msg.SHAPES_ELLIPSE_TOOLTIP = "Draws an ellipse (oval) to the screen"
 
 Blockly.Msg.ADD_COMMENT = "Add Comment";
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";

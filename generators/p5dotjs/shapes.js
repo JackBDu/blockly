@@ -45,3 +45,13 @@ Blockly.p5dotjs['shapes_line'] = function(block) {
   var code = 'line('+x1+', '+y1+', '+y2+', '+y2+');\n';
   return code;
 };
+
+Blockly.p5dotjs['shapes_ellipse'] = function(block) {
+  // point()
+  var a = Blockly.p5dotjs.valueToCode(block, 'A', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var b = Blockly.p5dotjs.valueToCode(block, 'B', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var c = Blockly.p5dotjs.valueToCode(block, 'C', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var d = Blockly.p5dotjs.valueToCode(block, 'D', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var code = 'ellipse('+a+', '+b+', '+c+', '+d+');\n';
+  return code;
+};

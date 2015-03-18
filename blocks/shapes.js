@@ -87,3 +87,35 @@ Blockly.Blocks['shapes_line'] = {
     this.setTooltip(Blockly.Msg.SHAPES_LINE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['shapes_ellipse'] = {
+  /**
+   * Block for ellipse(a, b, c, d)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.SHAPES_ELLIPSE_HELPURL);
+    this.setColour(Blockly.Blocks.shapes.HUE);
+    this.setInputsInline(true);
+    this.appendValueInput("A")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_ELLIPSE_TITLE)
+        // .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("B")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendValueInput("C")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("D")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.SHAPES_ELLIPSE_TOOLTIP);
+  }
+};
