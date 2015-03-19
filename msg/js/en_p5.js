@@ -16,6 +16,14 @@ Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_HALFPI = "A mathematical constant with
 Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_ONEPI = "A mathematical constant with the value 3.14159265358979323846";
 Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_TWOPI = "A mathematical constant with the value 6.28318530717958647693";
 
+Blockly.Msg.SHAPES_ARC_HELPURL = "http://p5js.org/reference/#/p5/arc";
+Blockly.Msg.SHAPES_ARC_TOOLTIP = "Draws an arc";
+Blockly.Msg.SHAPES_ARC_TITLE = "draw arc";
+Blockly.Msg.SHAPES_ARC_OPERATOR_OPENPIE = "open pie";
+Blockly.Msg.SHAPES_ARC_OPERATOR_OPEN = "open";
+Blockly.Msg.SHAPES_ARC_OPERATOR_PIE = "pie";
+Blockly.Msg.SHAPES_ARC_OPERATOR_CHORD = "chord";
+
 Blockly.Msg.SHAPES_POINT_HELPURL = "http://p5js.org/reference/#/p5/point";
 Blockly.Msg.SHAPES_POINT_TITLE = "draw point at";
 Blockly.Msg.SHAPES_POINT_TOOLTIP = "Draws a point, a coordinate in space at the dimension of one pixel";

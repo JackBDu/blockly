@@ -151,3 +151,50 @@ Blockly.Blocks['shapes_rect'] = {
     this.setTooltip(Blockly.Msg.SHAPES_RECT_TOOLTIP);
   }
 };
+
+Blockly.Blocks['shapes_arc'] = {
+  /**
+   * Block for arc(a, b, c, d, start, stop, [mode])
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.SHAPES_ARC_OPERATOR_OPENPIE, 'OPENPIE'],
+         [Blockly.Msg.SHAPES_ARC_OPERATOR_OPEN, 'OPEN'],
+         [Blockly.Msg.SHAPES_ARC_OPERATOR_PIE, 'PIE'],
+         [Blockly.Msg.SHAPES_ARC_OPERATOR_CHORD, 'CHORD']];
+    this.setHelpUrl(Blockly.Msg.SHAPES_ARC_HELPURL);
+    this.setColour(Blockly.Blocks.shapes.HUE);
+    this.setInputsInline(true);
+    this.appendValueInput("A")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_ARC_TITLE)
+        // .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("B")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendValueInput("C")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("D")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendValueInput("START")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("STOP")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        // .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.SHAPES_ARC_TOOLTIP);
+  }
+};

@@ -65,3 +65,21 @@ Blockly.p5dotjs['shapes_rect'] = function(block) {
   var code = 'rect('+a+', '+b+', '+c+', '+d+');\n';
   return code;
 };
+
+Blockly.p5dotjs['shapes_arc'] = function(block) {
+  // arc()
+  var a = Blockly.p5dotjs.valueToCode(block, 'A', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var b = Blockly.p5dotjs.valueToCode(block, 'B', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var c = Blockly.p5dotjs.valueToCode(block, 'C', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var d = Blockly.p5dotjs.valueToCode(block, 'D', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var start = Blockly.p5dotjs.valueToCode(block, 'START', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var stop = Blockly.p5dotjs.valueToCode(block, 'STOP', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var mode = block.getFieldValue('MODE');
+  var code = 'arc('+a+', '+b+', '+c+', '+d+', '+start+', '+stop;
+  if (mode == 'OPENPIE') {
+    code += ');\n';
+  } else {
+    code += ', '+mode+');\n';
+  }
+  return code;
+};
