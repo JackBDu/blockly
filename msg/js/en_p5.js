@@ -6,6 +6,16 @@ goog.provide('Blockly.Msg.en');
 
 goog.require('Blockly.Msg');
 
+Blockly.Msg.CONSTANTS_PI_HELPURL = "http://p5js.org/reference/#/p5/PI";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_QUARTERPI = "π/4";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_HALFPI = "π/2";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_ONEPI = "π";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_TWOPI = "2π";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_QUARTERPI = "A mathematical constant with the value 0.7853982";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_HALFPI = "A mathematical constant with the value 1.57079632679489661923";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_ONEPI = "A mathematical constant with the value 3.14159265358979323846";
+Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_TWOPI = "A mathematical constant with the value 6.28318530717958647693";
+
 Blockly.Msg.SHAPES_POINT_HELPURL = "http://p5js.org/reference/#/p5/point";
 Blockly.Msg.SHAPES_POINT_TITLE = "draw point at";
 Blockly.Msg.SHAPES_POINT_TOOLTIP = "Draws a point, a coordinate in space at the dimension of one pixel";

@@ -19,6 +19,7 @@
   <script src="../../blocks/structures.js"></script>
   <script src="../../blocks/text.js"></script>
   <script src="../../blocks/variables.js"></script>
+  <script src="../../blocks/constants.js"></script>
   <script src="../../generators/p5dotjs.js"></script>
   <script src="../../generators/p5dotjs/colour.js"></script>
   <script src="../../generators/p5dotjs/environment.js"></script>
@@ -32,6 +33,7 @@
   <script src="../../generators/p5dotjs/structures.js"></script>
   <script src="../../generators/p5dotjs/text.js"></script>
   <script src="../../generators/p5dotjs/variables.js"></script>
+  <script src="../../generators/p5dotjs/constants.js"></script>
   <script src="../../msg/js/en_p5.js"></script>
   <script src="msg/en.js"></script>
   <script src="code.js"></script>
@@ -91,6 +93,9 @@
       <block type="colour_no_fill"></block>
       <block type="colour_stroke"></block>
       <block type="colour_no_stroke"></block>
+    </category>
+    <category name="Constants" id="catConstants">
+      <block type="constants_pi"></block>
     </category>
     <category name="Environment" id="catEnvironment">
       <block type="environment_display"></block>
