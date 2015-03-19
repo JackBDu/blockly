@@ -37,7 +37,7 @@ Blockly.p5dotjs['shapes_point'] = function(block) {
 };
 
 Blockly.p5dotjs['shapes_line'] = function(block) {
-  // point()
+  // line()
   var x1 = Blockly.p5dotjs.valueToCode(block, 'X1', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var y1 = Blockly.p5dotjs.valueToCode(block, 'Y1', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var x2 = Blockly.p5dotjs.valueToCode(block, 'X2', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
@@ -47,11 +47,21 @@ Blockly.p5dotjs['shapes_line'] = function(block) {
 };
 
 Blockly.p5dotjs['shapes_ellipse'] = function(block) {
-  // point()
+  // ellipse()
   var a = Blockly.p5dotjs.valueToCode(block, 'A', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var b = Blockly.p5dotjs.valueToCode(block, 'B', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var c = Blockly.p5dotjs.valueToCode(block, 'C', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var d = Blockly.p5dotjs.valueToCode(block, 'D', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var code = 'ellipse('+a+', '+b+', '+c+', '+d+');\n';
+  return code;
+};
+
+Blockly.p5dotjs['shapes_rect'] = function(block) {
+  // rect()
+  var a = Blockly.p5dotjs.valueToCode(block, 'A', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var b = Blockly.p5dotjs.valueToCode(block, 'B', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var c = Blockly.p5dotjs.valueToCode(block, 'C', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var d = Blockly.p5dotjs.valueToCode(block, 'D', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var code = 'rect('+a+', '+b+', '+c+', '+d+');\n';
   return code;
 };

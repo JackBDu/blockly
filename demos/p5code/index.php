@@ -106,6 +106,7 @@
       <block type="shapes_point"></block>
       <block type="shapes_line"></block>
       <block type="shapes_ellipse"></block>
+      <block type="shapes_rect"></block>
     </category>
     <category name="Structures" id="catStructures">
       <block type="structures_preload"></block>
