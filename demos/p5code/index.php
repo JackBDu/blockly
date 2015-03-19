@@ -109,6 +109,7 @@
       <block type="shapes_rect"></block>
       <block type="shapes_arc"></block>
       <block type="shapes_quad"></block>
+      <block type="shapes_triangle"></block>
     </category>
     <category name="Structures" id="catStructures">
       <block type="structures_preload"></block>

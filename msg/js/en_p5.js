@@ -28,6 +28,10 @@ Blockly.Msg.SHAPES_QUAD_HELPURL = "http://p5js.org/reference/#/p5/quad";
 Blockly.Msg.SHAPES_QUAD_TITLE1 = "draw quad from";
 Blockly.Msg.SHAPES_QUAD_TITLE2 = "to";
 Blockly.Msg.SHAPES_QUAD_TOOLTIP = "Draws a quad to the screen"
+Blockly.Msg.SHAPES_TRIANGLE_HELPURL = "http://p5js.org/reference/#/p5/triangle";
+Blockly.Msg.SHAPES_TRIANGLE_TITLE1 = "draw triangle from";
+Blockly.Msg.SHAPES_TRIANGLE_TITLE2 = "to";
+Blockly.Msg.SHAPES_TRIANGLE_TOOLTIP = "Draws a triangle to the screen"
 
 Blockly.Msg.SHAPES_POINT_HELPURL = "http://p5js.org/reference/#/p5/point";
 Blockly.Msg.SHAPES_POINT_TITLE = "draw point at";

@@ -139,6 +139,48 @@ Blockly.Blocks['shapes_quad'] = {
   }
 };
 
+Blockly.Blocks['shapes_triangle'] = {
+  /**
+   * Block for triangle(x1, y1, x2, y2, x3, y3,)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.SHAPES_TRIANGLE_HELPURL);
+    this.setColour(Blockly.Blocks.shapes.HUE);
+    // this.setInputsInline(true);
+    this.appendValueInput("X1")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_TRIANGLE_TITLE1)
+        .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("Y1")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendValueInput("X2")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_TRIANGLE_TITLE2)
+        .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("Y2")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.appendValueInput("X3")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_TRIANGLE_TITLE2)
+        .appendField(Blockly.Msg.SHAPES_X_SYMBOL);
+    this.appendValueInput("Y3")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SHAPES_Y_SYMBOL);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.SHAPES_TRIANGLE_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['shapes_ellipse'] = {
   /**
    * Block for ellipse(a, b, c, d)
