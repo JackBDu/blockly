@@ -42,7 +42,21 @@ Blockly.p5dotjs['shapes_line'] = function(block) {
   var y1 = Blockly.p5dotjs.valueToCode(block, 'Y1', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var x2 = Blockly.p5dotjs.valueToCode(block, 'X2', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
   var y2 = Blockly.p5dotjs.valueToCode(block, 'Y2', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
-  var code = 'line('+x1+', '+y1+', '+y2+', '+y2+');\n';
+  var code = 'line('+x1+', '+y1+', '+x2+', '+y2+');\n';
+  return code;
+};
+
+Blockly.p5dotjs['shapes_quad'] = function(block) {
+  // quad()
+  var x1 = Blockly.p5dotjs.valueToCode(block, 'X1', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var y1 = Blockly.p5dotjs.valueToCode(block, 'Y1', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var x2 = Blockly.p5dotjs.valueToCode(block, 'X2', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var y2 = Blockly.p5dotjs.valueToCode(block, 'Y2', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var x3 = Blockly.p5dotjs.valueToCode(block, 'X3', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var y3 = Blockly.p5dotjs.valueToCode(block, 'Y3', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var x4 = Blockly.p5dotjs.valueToCode(block, 'X4', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var y4 = Blockly.p5dotjs.valueToCode(block, 'Y4', Blockly.p5dotjs.ORDER_ATOMIC) || 0;
+  var code = 'quad('+x1+', '+y1+', '+x2+', '+y2+', '+x3+', '+y3+', '+x4+', '+y4+');\n';
   return code;
 };
 

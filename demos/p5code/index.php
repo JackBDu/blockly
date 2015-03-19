@@ -108,6 +108,7 @@
       <block type="shapes_ellipse"></block>
       <block type="shapes_rect"></block>
       <block type="shapes_arc"></block>
+      <block type="shapes_quad"></block>
     </category>
     <category name="Structures" id="catStructures">
       <block type="structures_preload"></block>

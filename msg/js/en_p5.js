@@ -17,12 +17,17 @@ Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_ONEPI = "A mathematical constant with 
 Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_TWOPI = "A mathematical constant with the value 6.28318530717958647693";
 
 Blockly.Msg.SHAPES_ARC_HELPURL = "http://p5js.org/reference/#/p5/arc";
-Blockly.Msg.SHAPES_ARC_TOOLTIP = "Draws an arc";
+Blockly.Msg.SHAPES_ARC_TOOLTIP = "Draws an arc to the screen";
 Blockly.Msg.SHAPES_ARC_TITLE = "draw arc";
 Blockly.Msg.SHAPES_ARC_OPERATOR_OPENPIE = "open pie";
 Blockly.Msg.SHAPES_ARC_OPERATOR_OPEN = "open";
 Blockly.Msg.SHAPES_ARC_OPERATOR_PIE = "pie";
 Blockly.Msg.SHAPES_ARC_OPERATOR_CHORD = "chord";
+
+Blockly.Msg.SHAPES_QUAD_HELPURL = "http://p5js.org/reference/#/p5/quad";
+Blockly.Msg.SHAPES_QUAD_TITLE1 = "draw quad from";
+Blockly.Msg.SHAPES_QUAD_TITLE2 = "to";
+Blockly.Msg.SHAPES_QUAD_TOOLTIP = "Draws a quad to the screen"
 
 Blockly.Msg.SHAPES_POINT_HELPURL = "http://p5js.org/reference/#/p5/point";
 Blockly.Msg.SHAPES_POINT_TITLE = "draw point at";
