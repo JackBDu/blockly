@@ -40,19 +40,7 @@ Blockly.p5dotjs['colour_picker'] = function(block) {
   var red = hexToR(hex);
   var green = hexToG(hex);
   var blue = hexToB(hex);
-  var color = 'color(' + red + ', ' + green + ', ' + blue + ')';
-  return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
-};
-
-Blockly.p5dotjs['colour_rgb'] = function(block) {
-  // Compose a colour from RGB components expressed as percentages.
-  var red = Blockly.p5dotjs.valueToCode(block, 'RED',
-      Blockly.p5dotjs.ORDER_COMMA) || 0;
-  var green = Blockly.p5dotjs.valueToCode(block, 'GREEN',
-      Blockly.p5dotjs.ORDER_COMMA) || 0;
-  var blue = Blockly.p5dotjs.valueToCode(block, 'BLUE',
-      Blockly.p5dotjs.ORDER_COMMA) || 0;
-  var color = 'color(' + red + ', ' + green + ', ' + blue + ')';
+  var color = '(' + red + ', ' + green + ', ' + blue + ')';
   return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
@@ -60,6 +48,14 @@ Blockly.p5dotjs['colour_rgb'] = function(block) {
  * @fileoverview Generating p5dotjs for colour setting blocks.
  * @author jackbdu@nyu.edu (Jack B. Du)
  */
+Blockly.p5dotjs['colour_colour'] = function(block) {
+  // background()
+  var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR',
+      Blockly.p5dotjs.ORDER_COMMA) || 0;
+  var code = 'color('+ colour +');\n';
+  return code;
+};
+
 Blockly.p5dotjs['colour_background'] = function(block) {
   // background()
   var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR',

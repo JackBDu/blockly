@@ -89,7 +89,7 @@
   <xml id="toolbox" style="display: none">
     <category name="Colour" id="catColour">
       <block type="colour_picker"></block>
-      <block type="colour_rgb"></block>
+      <block type="colour_colour"></block>
       <block type="colour_background"></block>
       <block type="colour_fill"></block>
       <block type="colour_no_fill"></block>
@@ -153,6 +153,7 @@
     </category>
     <category name="Math" id="catMath">
       <block type="math_number"></block>
+      <block type="math_three_number"></block>
       <block type="math_arithmetic"></block>
       <block type="math_single"></block>
     </category>

@@ -46,36 +46,25 @@ Blockly.Blocks['colour_picker'] = {
   }
 };
 
-Blockly.Blocks['colour_rgb'] = {
-  /**
-   * Block for composing a colour from RGB components.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.COLOUR_RGB_HELPURL);
-    this.setColour(Blockly.Blocks.colour.HUE);
-    this.appendValueInput('RED')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_RGB_TITLE)
-        .appendField(Blockly.Msg.COLOUR_RGB_RED);
-    this.appendValueInput('GREEN')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_RGB_GREEN);
-    this.appendValueInput('BLUE')
-        .setCheck('Number')
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
-    this.setOutput(true, 'Colour');
-    this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP);
-  }
-};
-
 /**
  * @fileoverview Colour Setting blocks for Blockly.
  * @author jackbdu@nyu.edu (Jack B. Du)
  */
+Blockly.Blocks['colour_colour'] = {
+  /**
+   * Block for color()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.COLOUR_COLOUR_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_COLOUR_TITLE);
+    this.setOutput(true, 'Colour');
+    this.setTooltip(Blockly.Msg.COLOUR_COLOUR_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['colour_background'] = {
   /**
    * Block for background()

@@ -47,6 +47,27 @@ Blockly.Blocks['math_number'] = {
   }
 };
 
+Blockly.Blocks['math_three_number'] = {
+  /**
+   * Block for three numeric value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput('0',
+        Blockly.FieldTextInput.numberValidator), 'NUM1')
+        .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA)
+        .appendField(new Blockly.FieldTextInput('0',
+        Blockly.FieldTextInput.numberValidator), 'NUM2')
+        .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA)
+        .appendField(new Blockly.FieldTextInput('0',
+        Blockly.FieldTextInput.numberValidator), 'NUM3');
+    this.setOutput(true, 'Colour');
+    this.setTooltip(Blockly.Msg.MATH_THREE_NUMBER_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['math_arithmetic'] = {
   /**
    * Block for basic arithmetic operator.
