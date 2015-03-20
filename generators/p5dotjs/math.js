@@ -37,8 +37,14 @@ Blockly.p5dotjs['math_number'] = function(block) {
 
 Blockly.p5dotjs['math_three_number'] = function(block) {
   // Three numeric value.
-  var code = parseFloat(block.getFieldValue('NUM1'))+", "+parseFloat(block.getFieldValue('NUM2'))+", "+parseFloat(block.getFieldValue('NUM3'));
-  return [code, Blockly.p5dotjs.ORDER_ATOMIC];
+  var a = Blockly.p5dotjs.valueToCode(block, 'A',
+      Blockly.p5dotjs.ORDER_COMMA) || 0;
+  var b = Blockly.p5dotjs.valueToCode(block, 'B',
+      Blockly.p5dotjs.ORDER_COMMA) || 0;
+  var c = Blockly.p5dotjs.valueToCode(block, 'C',
+      Blockly.p5dotjs.ORDER_COMMA) || 0;
+  var color = a + ', ' + b + ', ' + c;
+  return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
 Blockly.p5dotjs['math_arithmetic'] = function(block) {

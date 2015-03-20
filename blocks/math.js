@@ -54,16 +54,19 @@ Blockly.Blocks['math_three_number'] = {
    */
   init: function() {
     this.setColour(Blockly.Blocks.math.HUE);
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput('0',
-        Blockly.FieldTextInput.numberValidator), 'NUM1')
-        .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA)
-        .appendField(new Blockly.FieldTextInput('0',
-        Blockly.FieldTextInput.numberValidator), 'NUM2')
-        .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA)
-        .appendField(new Blockly.FieldTextInput('0',
-        Blockly.FieldTextInput.numberValidator), 'NUM3');
+
+    this.setHelpUrl(Blockly.Msg.MATH_THREE_NUMBER_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+     this.appendValueInput('A')
+         .setCheck('Number')
+     this.appendValueInput('B')
+         .setCheck('Number')
+         .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA);
+     this.appendValueInput('C')
+         .setCheck('Number')
+         .appendField(Blockly.Msg.MATH_THREE_NUMBER_COMMA);
     this.setOutput(true, 'Colour');
+    this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.MATH_THREE_NUMBER_TOOLTIP);
   }
 };
