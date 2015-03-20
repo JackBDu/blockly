@@ -55,10 +55,12 @@ Blockly.Blocks['inputs_touch_mouse'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(AXIS), 'AXIS');
     this.setOutput(true, 'Number');
+    this.setHelpUrl(Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
-      var op = thisBlock.getFieldValue('STATE')+thisBlock.getFieldValue('INPUTS')+thisBlock.getFieldValue('AXIS');
+      var op = thisBlock.getFieldValue('STATE')+thisBlock.getFieldValue('INPUT')+thisBlock.getFieldValue('AXIS');
+
       var TOOLTIPS = {
         'CURRENTMOUSEX': Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_CURRENTMOUSEX,
         'CURRENTMOUSEY': Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_CURRENTMOUSEY,
@@ -68,20 +70,6 @@ Blockly.Blocks['inputs_touch_mouse'] = {
         'PREVIOUSMOUSEY': Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSMOUSEY,
         'PREVIOUSTOUCHX': Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHX,
         'PREVIOUSTOUCHY': Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHY
-      };
-      return TOOLTIPS[op];
-    });
-    this.setHelpUrl(function() {
-      var op = thisBlock.getFieldValue('STATE')+thisBlock.getFieldValue('INPUTS')+thisBlock.getFieldValue('AXIS');
-      var TOOLTIPS = {
-        'CURRENTMOUSEX': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTMOUSEX,
-        'CURRENTMOUSEY': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTMOUSEY,
-        'CURRENTTOUCHX': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTTOUCHX,
-        'CURRENTTOUCHY': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTTOUCHY,
-        'PREVIOUSMOUSEX': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSMOUSEX,
-        'PREVIOUSMOUSEY': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSMOUSEY,
-        'PREVIOUSTOUCHX': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSTOUCHX,
-        'PREVIOUSTOUCHY': Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSTOUCHY
       };
       return TOOLTIPS[op];
     });

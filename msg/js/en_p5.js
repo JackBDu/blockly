@@ -25,14 +25,7 @@ Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSMOUSEY = "The vertical position of
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHX = "The horizontal position of the mouse in the frame previous to the current frame, relative to (0, 0) of the canvas";
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHY = "The vertical position of the mouse in the frame previous to the current frame, relative to (0, 0) of the canvas";
 
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTMOUSEX = "http://p5js.org/reference/#/p5/mouseX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTMOUSEY = "http://p5js.org/reference/#/p5/mouseY";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTTOUCHX = "http://p5js.org/reference/#/p5/touchX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_CURRENTTOUCHX = "http://p5js.org/reference/#/p5/touchX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSMOUSEX = "http://p5js.org/reference/#/p5/pmouseX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSMOUSEY = "http://p5js.org/reference/#/p5/pmouseX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSTOUCHX = "http://p5js.org/reference/#/p5/ptouchX";
-Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL_PREVIOUSTOUCHY = "http://p5js.org/reference/#/p5/ptouchY";
+Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL = "http://p5js.org/reference/#/p5/mouseX";
 
 Blockly.Msg.INPUTS_MOUSETOUCH_STATES_CURRENT = "current";
 Blockly.Msg.INPUTS_MOUSETOUCH_STATES_PREVIOUS = "previous";
