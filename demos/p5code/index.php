@@ -8,7 +8,9 @@
   <script src="../../appengine/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks/colour.js"></script>
+  <script src="../../blocks/constants.js"></script>
   <script src="../../blocks/environment.js"></script>
+  <script src="../../blocks/inputs.js"></script>
   <script src="../../blocks/lists.js"></script>
   <script src="../../blocks/logic.js"></script>
   <script src="../../blocks/loops.js"></script>
@@ -19,10 +21,11 @@
   <script src="../../blocks/structures.js"></script>
   <script src="../../blocks/text.js"></script>
   <script src="../../blocks/variables.js"></script>
-  <script src="../../blocks/constants.js"></script>
   <script src="../../generators/p5dotjs.js"></script>
   <script src="../../generators/p5dotjs/colour.js"></script>
+  <script src="../../generators/p5dotjs/constants.js"></script>
   <script src="../../generators/p5dotjs/environment.js"></script>
+  <script src="../../generators/p5dotjs/inputs.js"></script>
   <script src="../../generators/p5dotjs/lists.js"></script>
   <script src="../../generators/p5dotjs/logic.js"></script>
   <script src="../../generators/p5dotjs/loops.js"></script>
@@ -33,7 +36,6 @@
   <script src="../../generators/p5dotjs/structures.js"></script>
   <script src="../../generators/p5dotjs/text.js"></script>
   <script src="../../generators/p5dotjs/variables.js"></script>
-  <script src="../../generators/p5dotjs/constants.js"></script>
   <script src="../../msg/js/en_p5.js"></script>
   <script src="msg/en.js"></script>
   <script src="code.js"></script>
@@ -160,6 +162,9 @@
     <category name="Variables" id="catVariables">
       <block type="variables_get"></block>
       <block type="variables_set"></block>
+    </category>
+    <category name="Inputs" id="catInputs">
+      <block type="inputs_touch_mouse"></block>
     </category>
   </xml>
   </xml>
