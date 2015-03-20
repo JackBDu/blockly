@@ -124,8 +124,23 @@ Blockly.Blocks['environment_frame_count'] = {
     this.setHelpUrl(Blockly.Msg.ENVIRONMENT_FRAMECOUNT_HELPURL);
     this.setColour(Blockly.Blocks.environment.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TITLE)
+        .appendField(Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TITLE);
     this.setOutput(true, 'Number');
     this.setTooltip = Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TOOLTIP;
+  }
+};
+
+Blockly.Blocks['environment_focused'] = {
+  /**
+   * Block for boolean data type: true and false.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ENVIRONMENT_FOCUSED_HELPURL);
+    this.setColour(Blockly.Blocks.environment.HUE);
+    this.setOutput(true, 'Boolean');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ENVIRONMENT_FOCUSED_TITLE);
+    this.setTooltip(Blockly.Msg.ENVIRONMENT_FOCUSED_TOOLTIP);
   }
 };

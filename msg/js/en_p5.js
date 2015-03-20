@@ -158,6 +158,9 @@ Blockly.Msg.ENVIRONMENT_CANVAS_OPERATOR_TOOLTIP_WIDTH = "System variable that st
 Blockly.Msg.ENVIRONMENT_CANVAS_OPERATOR_TOOLTIP_HEIGHT = "System variable that stores the height of the drawing canvas";
 Blockly.Msg.ENVIRONMENT_CANVAS_OPERATOR_WIDTH = "width";
 Blockly.Msg.ENVIRONMENT_CANVAS_OPERATOR_HEIGHT = "height";
+Blockly.Msg.ENVIRONMENT_FOCUSED_HELPURL = "http://p5js.org/reference/#/p5/focused";
+Blockly.Msg.ENVIRONMENT_FOCUSED_TITLE = "focused";
+Blockly.Msg.ENVIRONMENT_FOCUSED_TOOLTIP = "Confirms if a p5.js program is \"focused,\" meaning that it is active and will accept mouse or keyboard input";
 
 Blockly.Msg.EXPAND_ALL = "Expand Blocks";
 Blockly.Msg.EXPAND_BLOCK = "Expand Block";

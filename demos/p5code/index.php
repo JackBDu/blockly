@@ -104,6 +104,7 @@
       <block type="environment_window"></block>
       <block type="environment_canvas"></block>
       <block type="environment_frame_count"></block>
+      <block type="environment_focused"></block>
     </category>
     <category name="Shapes" id="catShapes">
       <block type="shapes_point"></block>

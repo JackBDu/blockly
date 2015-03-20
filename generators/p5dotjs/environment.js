@@ -63,3 +63,8 @@ Blockly.p5dotjs['environment_frame_count'] = function(block) {
   // frameCount
   return ['frameCount', Blockly.p5dotjs.ORDER_ATOMIC];
 };
+
+Blockly.p5dotjs['environment_focused'] = function(block) {
+  // focused
+  return ['focused', Blockly.p5dotjs.ORDER_ATOMIC];
+};
