@@ -30,7 +30,7 @@ goog.require('Blockly.p5dotjs');
 
 
 Blockly.p5dotjs['environment_display'] = function(block) {
-  // Numeric value.
+  // displayWidth/displayHeight
   var width = block.getFieldValue('MODE') == 'WIDTH';
   if (width) {
     return ['displayWidth', Blockly.p5dotjs.ORDER_ATOMIC];
@@ -40,7 +40,7 @@ Blockly.p5dotjs['environment_display'] = function(block) {
 };
 
 Blockly.p5dotjs['environment_window'] = function(block) {
-  // Numeric value.
+  // windowWidth/windowHeight
   var width = block.getFieldValue('MODE') == 'WIDTH';
   if (width) {
     return ['windowWidth', Blockly.p5dotjs.ORDER_ATOMIC];
@@ -50,11 +50,16 @@ Blockly.p5dotjs['environment_window'] = function(block) {
 };
 
 Blockly.p5dotjs['environment_canvas'] = function(block) {
-  // Numeric value.
+  // canvasWidth/canvasHeight
   var width = block.getFieldValue('MODE') == 'WIDTH';
   if (width) {
     return ['width', Blockly.p5dotjs.ORDER_ATOMIC];
   } else {
     return ['height', Blockly.p5dotjs.ORDER_ATOMIC];
   }
+};
+
+Blockly.p5dotjs['environment_frame_count'] = function(block) {
+  // frameCount
+  return ['frameCount', Blockly.p5dotjs.ORDER_ATOMIC];
 };

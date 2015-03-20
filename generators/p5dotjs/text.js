@@ -230,7 +230,7 @@ Blockly.p5dotjs['text_print'] = function(block) {
   // Print statement.
   var argument0 = Blockly.p5dotjs.valueToCode(block, 'TEXT',
       Blockly.p5dotjs.ORDER_NONE) || '\'\'';
-  return 'window.alert(' + argument0 + ');\n';
+  return 'print(' + argument0 + ');\n';
 };
 
 Blockly.p5dotjs['text_prompt'] = function(block) {

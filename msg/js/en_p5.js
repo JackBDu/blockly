@@ -24,9 +24,7 @@ Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSMOUSEX = "The horizontal position 
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSMOUSEY = "The vertical position of the mouse in the frame previous to the current frame, relative to (0, 0) of the canvas";
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHX = "The horizontal position of the mouse in the frame previous to the current frame, relative to (0, 0) of the canvas";
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_PREVIOUSTOUCHY = "The vertical position of the mouse in the frame previous to the current frame, relative to (0, 0) of the canvas";
-
 Blockly.Msg.INPUTS_MOUSETOUCH_HELPURL = "http://p5js.org/reference/#/p5/mouseX";
-
 Blockly.Msg.INPUTS_MOUSETOUCH_STATES_CURRENT = "current";
 Blockly.Msg.INPUTS_MOUSETOUCH_STATES_PREVIOUS = "previous";
 Blockly.Msg.INPUTS_MOUSETOUCH_INPUTS_MOUSE = "mouse";
@@ -139,6 +137,9 @@ Blockly.Msg.DISABLE_BLOCK = "Disable Block";
 Blockly.Msg.DUPLICATE_BLOCK = "Duplicate";
 Blockly.Msg.ENABLE_BLOCK = "Enable Block";
 
+Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TITLE = "number of frames";
+Blockly.Msg.ENVIRONMENT_FRAMECOUNT_HELPURL = "http://p5js.org/reference/#/p5/frameCount";
+Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TOOLTIP = "The number of frames that have been displayed since the program started";
 Blockly.Msg.ENVIRONMENT_DISPLAY_TITLE = "display";
 Blockly.Msg.ENVIRONMENT_DISPLAY_HELPURL = "http://p5js.org/reference/#/p5/displayWidth";
 Blockly.Msg.ENVIRONMENT_DISPLAY_OPERATOR_TOOLTIP_WIDTH = "System variable that stores the width of the entire screen display";

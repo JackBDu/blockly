@@ -114,3 +114,18 @@ Blockly.Blocks['environment_canvas'] = {
     });
   }
 };
+
+Blockly.Blocks['environment_frame_count'] = {
+  /**
+   * Block for frameCount.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ENVIRONMENT_FRAMECOUNT_HELPURL);
+    this.setColour(Blockly.Blocks.environment.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TITLE)
+    this.setOutput(true, 'Number');
+    this.setTooltip = Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TOOLTIP;
+  }
+};
