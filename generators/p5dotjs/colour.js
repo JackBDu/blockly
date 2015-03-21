@@ -40,7 +40,7 @@ Blockly.p5dotjs['colour_picker'] = function(block) {
   var red = hexToR(hex);
   var green = hexToG(hex);
   var blue = hexToB(hex);
-  var color = '(' + red + ', ' + green + ', ' + blue + ')';
+  var color = red + ', ' + green + ', ' + blue;
   return [color, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
 };
 
