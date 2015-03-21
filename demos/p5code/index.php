@@ -131,9 +131,6 @@
     </category>
     <category name="Logic" id="catLogic">
       <block type="controls_if"></block>
-      <block type="controls_if_if"></block>
-      <block type="controls_if_elseif"></block>
-      <block type="controls_if_else"></block>
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
