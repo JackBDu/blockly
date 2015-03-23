@@ -144,3 +144,19 @@ Blockly.Blocks['environment_focused'] = {
     this.setTooltip(Blockly.Msg.ENVIRONMENT_FOCUSED_TOOLTIP);
   }
 };
+
+Blockly.Blocks['environment_no_cursor'] = {
+  /**
+   * Block for noCursor()
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ENVIRONMENT_NOCURSOR_HELPURL);
+    this.setColour(Blockly.Blocks.environment.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ENVIRONMENT_NOCURSOR_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.ENVIRONMENT_NOCURSOR_TOOLTIP);
+  }
+};

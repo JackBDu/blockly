@@ -68,3 +68,8 @@ Blockly.p5dotjs['environment_focused'] = function(block) {
   // focused
   return ['focused', Blockly.p5dotjs.ORDER_ATOMIC];
 };
+
+Blockly.p5dotjs['environment_no_cursor'] = function(block) {
+  // noCursor()
+    return 'noCursor();\n';
+};

@@ -134,6 +134,9 @@ Blockly.Msg.DISABLE_BLOCK = "Disable Block";
 Blockly.Msg.DUPLICATE_BLOCK = "Duplicate";
 Blockly.Msg.ENABLE_BLOCK = "Enable Block";
 
+Blockly.Msg.ENVIRONMENT_NOCURSOR_TITLE = "hide cursor";
+Blockly.Msg.ENVIRONMENT_NOCURSOR_HELPURL = "http://p5js.org/reference/#/p5/noCursor";
+Blockly.Msg.ENVIRONMENT_NOCURSOR_TOOLTIP = "Hides the cursor from view";
 Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TITLE = "number of frames";
 Blockly.Msg.ENVIRONMENT_FRAMECOUNT_HELPURL = "http://p5js.org/reference/#/p5/frameCount";
 Blockly.Msg.ENVIRONMENT_FRAMECOUNT_TOOLTIP = "The number of frames that have been displayed since the program started";
