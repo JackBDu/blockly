@@ -71,6 +71,17 @@ Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
 Blockly.Msg.CHAT = "Chat with your collaborator by typing in this box!";
 Blockly.Msg.COLLAPSE_ALL = "Collapse Blocks";
 Blockly.Msg.COLLAPSE_BLOCK = "Collapse Block";
+
+Blockly.Msg.COLOUR_RGBHSB_COLOURMODE_RGB = "rgb";
+Blockly.Msg.COLOUR_RGBHSB_COLOURMODE_HSB = "hsb";
+Blockly.Msg.COLOUR_COLOURMODE_TITLE = "color mode";
+Blockly.Msg.COLOUR_COLOURMODE_TITLE1 = "max 1";
+Blockly.Msg.COLOUR_COLOURMODE_TITLE2 = "max 2";
+Blockly.Msg.COLOUR_COLOURMODE_TITLE3 = "max 3";
+Blockly.Msg.COLOUR_COLOURMODE_TITLE4 = "max a";
+Blockly.Msg.COLOUR_COLOURMODE_TOOLTIP = "Changes the way p5.js interprets color data";
+Blockly.Msg.COLOUR_COLOURMODE_HELPURL = "http://p5js.org/reference/#/p5/colorMode";
+
 Blockly.Msg.COLOUR_COLOUR_HELPURL = "http://p5js.org/reference/#/p5/color";
 Blockly.Msg.COLOUR_COLOUR_TITLE = "create color";
 Blockly.Msg.COLOUR_COLOUR_TOOLTIP = "Creates colors for storing in variables of the color datatype";

@@ -88,6 +88,7 @@
 
   <xml id="toolbox" style="display: none">
     <category name="Colour" id="catColour">
+      <block type="colour_colour_mode"></block>
       <block type="colour_picker"></block>
       <block type="colour_colour"></block>
       <block type="colour_background"></block>

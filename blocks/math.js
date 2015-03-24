@@ -54,7 +54,6 @@ Blockly.Blocks['math_three_number'] = {
    */
   init: function() {
     this.setColour(Blockly.Blocks.math.HUE);
-
     this.setHelpUrl(Blockly.Msg.MATH_THREE_NUMBER_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
      this.appendValueInput('A')

@@ -49,7 +49,7 @@ Blockly.p5dotjs['colour_picker'] = function(block) {
  * @author jackbdu@nyu.edu (Jack B. Du)
  */
 Blockly.p5dotjs['colour_colour'] = function(block) {
-  // background()
+  // color()
   var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR',
       Blockly.p5dotjs.ORDER_COMMA) || 0;
   var code = 'color('+ colour +');\n';
@@ -81,11 +81,35 @@ Blockly.p5dotjs['colour_stroke'] = function(block) {
 };
 
 Blockly.p5dotjs['colour_no_fill'] = function(block) {
-  // redraw()
-    return 'noFill();\n';
+  // noFill()
+  return 'noFill();\n';
 };
 
 Blockly.p5dotjs['colour_no_stroke'] = function(block) {
-  // redraw()
-    return 'noStroke();\n';
+  // noStroke()
+  return 'noStroke();\n';
+};
+
+Blockly.p5dotjs['colour_colour_mode'] = function(block) {
+  // colorMode(mode, max1, max2, max3, maxA)
+  var mode = block.getFieldValue('MODE');
+  var max1 = Blockly.p5dotjs.valueToCode(block, 'MAX1', Blockly.p5dotjs.ORDER_ATOMIC);
+  var max2 = Blockly.p5dotjs.valueToCode(block, 'MAX2', Blockly.p5dotjs.ORDER_ATOMIC);
+  var max3 = Blockly.p5dotjs.valueToCode(block, 'MAX3', Blockly.p5dotjs.ORDER_ATOMIC);
+  var maxa = Blockly.p5dotjs.valueToCode(block, 'MAXA', Blockly.p5dotjs.ORDER_ATOMIC);
+  var code = "colorMode("+mode;
+  if (max1) {
+    code = code + ", " + max1;
+    if (max2) {
+      code = code + ", " + max2;
+      if (max3) {
+        code = code + ", " + max3;
+        if (maxa) {
+          code = code + ", " + maxa;
+        }
+      }
+    }
+  }
+  code += ");\n";
+  return code;
 };

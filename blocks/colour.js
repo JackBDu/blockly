@@ -144,3 +144,39 @@ Blockly.Blocks['colour_no_stroke'] = {
     this.setTooltip(Blockly.Msg.COLOUR_NOSTROKE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['colour_colour_mode'] = {
+  /**
+   * Block for colorMode(mode, max1, max2, max3, maxA)
+   * @this Blockly.Block
+   */
+  init: function() {
+    var MODES =
+        [[Blockly.Msg.COLOUR_RGBHSB_COLOURMODE_RGB, 'RGB'],
+         [Blockly.Msg.COLOUR_RGBHSB_COLOURMODE_HSB, 'HSB']];
+    this.setHelpUrl(Blockly.Msg.COLOUR_COLOURMODE_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.COLOUR_COLOURMODE_TITLE)
+        .appendField(new Blockly.FieldDropdown(MODES), 'MODE');
+    this.appendValueInput("MAX1")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.COLOUR_COLOURMODE_TITLE1);
+    this.appendValueInput("MAX2")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.COLOUR_COLOURMODE_TITLE2);
+    this.appendValueInput("MAX3")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.COLOUR_COLOURMODE_TITLE3);
+    this.appendValueInput("MAXA")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .setCheck("Number")
+        .appendField(Blockly.Msg.COLOUR_COLOURMODE_TITLE4);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.COLOUR_COLOURMODE_TOOLTIP);
+  }
+};
