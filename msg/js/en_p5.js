@@ -82,6 +82,28 @@ Blockly.Msg.COLOUR_COLOURMODE_TITLE4 = "max a";
 Blockly.Msg.COLOUR_COLOURMODE_TOOLTIP = "Changes the way p5.js interprets color data";
 Blockly.Msg.COLOUR_COLOURMODE_HELPURL = "http://p5js.org/reference/#/p5/colorMode";
 
+Blockly.Msg.COLOUR_GETRGB_HELPURL = "http://p5js.org/reference/#/p5/red";
+Blockly.Msg.COLOUR_GETRGB_R = "red";
+Blockly.Msg.COLOUR_GETRGB_G = "green";
+Blockly.Msg.COLOUR_GETRGB_B = "blue";
+Blockly.Msg.COLOUR_GETRGB_A = "alpha";
+Blockly.Msg.COLOUR_GETRGB_TITLE1 = "get";
+Blockly.Msg.COLOUR_GETRGB_TITLE2 = "from";
+Blockly.Msg.COLOUR_GETRGB_TOOLTIP_R = "Extracts the red value from a color or pixel array";
+Blockly.Msg.COLOUR_GETRGB_TOOLTIP_G = "Extracts the green value from a color or pixel array";
+Blockly.Msg.COLOUR_GETRGB_TOOLTIP_B = "Extracts the blue value from a color or pixel array";
+
+Blockly.Msg.COLOUR_GETHSB_HELPURL = "http://p5js.org/reference/#/p5/hue";
+Blockly.Msg.COLOUR_GETHSB_H = "hue";
+Blockly.Msg.COLOUR_GETHSB_S = "saturation";
+Blockly.Msg.COLOUR_GETHSB_B = "brightness";
+Blockly.Msg.COLOUR_GETHSB_A = "alpha";
+Blockly.Msg.COLOUR_GETHSB_TITLE1 = "get";
+Blockly.Msg.COLOUR_GETHSB_TITLE2 = "from";
+Blockly.Msg.COLOUR_GETHSB_TOOLTIP_H = "Extracts the hue value from a color";
+Blockly.Msg.COLOUR_GETHSB_TOOLTIP_S = "Extracts the saturation value from a color";
+Blockly.Msg.COLOUR_GETHSB_TOOLTIP_B = "Extracts the brightness value from a color";
+
 Blockly.Msg.COLOUR_COLOUR_HELPURL = "http://p5js.org/reference/#/p5/color";
 Blockly.Msg.COLOUR_COLOUR_TITLE = "create color";
 Blockly.Msg.COLOUR_COLOUR_TOOLTIP = "Creates colors for storing in variables of the color datatype";

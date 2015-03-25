@@ -96,6 +96,8 @@
       <block type="colour_no_fill"></block>
       <block type="colour_stroke"></block>
       <block type="colour_no_stroke"></block>
+      <block type="colour_get_rgb"></block>
+      <block type="colour_get_hsb"></block>
     </category>
     <category name="Constants" id="catConstants">
       <block type="constants_pi"></block>

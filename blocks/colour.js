@@ -180,3 +180,69 @@ Blockly.Blocks['colour_colour_mode'] = {
     this.setTooltip(Blockly.Msg.COLOUR_COLOURMODE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['colour_get_rgb'] = {
+  /**
+   * Block for red(color), green(color), blue(color)
+   * @this Blockly.Block
+   */
+  init: function() {
+    var RGBS =
+        [[Blockly.Msg.COLOUR_GETRGB_R, 'RED'],
+         [Blockly.Msg.COLOUR_GETRGB_G, 'GREEN'],
+         [Blockly.Msg.COLOUR_GETRGB_B, 'BLUE'],
+         [Blockly.Msg.COLOUR_GETRGB_A, 'ALPHA']];
+    this.setHelpUrl(Blockly.Msg.COLOUR_GETRGB_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_GETRGB_TITLE1)
+        .appendField(new Blockly.FieldDropdown(RGBS), 'RGB')
+        .appendField(Blockly.Msg.COLOUR_GETRGB_TITLE2);
+    this.setOutput(true, 'Number');
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('RGB');
+      var TOOLTIPS = {
+        'RED': Blockly.Msg.COLOUR_GETRGB_TOOLTIP_R,
+        'GREEN': Blockly.Msg.COLOUR_GETRGB_TOOLTIP_G,
+        'BLUE': Blockly.Msg.COLOUR_GETRGB_TOOLTIP_B,
+        'ALPHA': Blockly.Msg.COLOUR_GETRGB_TOOLTIP_A
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};
+
+Blockly.Blocks['colour_get_hsb'] = {
+  /**
+   * Block for hue(color), saturation(color), brightness(color)
+   * @this Blockly.Block
+   */
+  init: function() {
+    var HSBS =
+        [[Blockly.Msg.COLOUR_GETHSB_H, 'HUE'],
+         [Blockly.Msg.COLOUR_GETHSB_S, 'SATURATION'],
+         [Blockly.Msg.COLOUR_GETHSB_B, 'BRIGHTNESS'],
+         [Blockly.Msg.COLOUR_GETHSB_A, 'ALPHA']];
+    this.setHelpUrl(Blockly.Msg.COLOUR_GETHSB_HELPURL);
+    this.setColour(Blockly.Blocks.colour.HUE);
+    this.appendValueInput("COLOUR")
+        .appendField(Blockly.Msg.COLOUR_GETHSB_TITLE1)
+        .appendField(new Blockly.FieldDropdown(HSBS), 'HSB')
+        .appendField(Blockly.Msg.COLOUR_GETHSB_TITLE2);
+    this.setOutput(true, 'Number');
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('HSB');
+      var TOOLTIPS = {
+        'HUE': Blockly.Msg.COLOUR_GETHSB_TOOLTIP_H,
+        'SATURATION': Blockly.Msg.COLOUR_GETHSB_TOOLTIP_S,
+        'BRIGHTNESS': Blockly.Msg.COLOUR_GETHSB_TOOLTIP_B,
+        'ALPHA': Blockly.Msg.COLOUR_GETHSB_TOOLTIP_A
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};

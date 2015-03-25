@@ -113,3 +113,19 @@ Blockly.p5dotjs['colour_colour_mode'] = function(block) {
   code += ");\n";
   return code;
 };
+
+Blockly.p5dotjs['colour_get_rgb'] = function(block) {
+  // red(color), green(color), blue(color)
+  var rgb = block.getFieldValue('RGB');
+  var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR', Blockly.p5dotjs.ORDER_COMMA);
+  var code = rgb.toLowerCase()+"("+colour+")";
+  return [code, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
+};
+
+Blockly.p5dotjs['colour_get_hsb'] = function(block) {
+  // hue(color), saturation(color), brightness(color)
+  var hsb = block.getFieldValue('HSB');
+  var colour = Blockly.p5dotjs.valueToCode(block, 'COLOUR', Blockly.p5dotjs.ORDER_COMMA);
+  var code = hsb.toLowerCase()+"("+colour+")";
+  return [code, Blockly.p5dotjs.ORDER_FUNCTION_CALL];
+};
