@@ -432,6 +432,22 @@ Blockly.Msg.RENDERINGS_NOCANVAS_TOOLTIP = "Removes the default canvas for a p5 s
 Blockly.Msg.RENDERINGS_RESIZECANVAS_HELPURL = "http://p5js.org/reference/#/p5/resizeCanvas";
 Blockly.Msg.RENDERINGS_RESIZECANVAS_TITLE = "resize canvas";
 Blockly.Msg.RENDERINGS_RESIZECANVAS_TOOLTIP = "Resizes the canvas to given width and height";
+
+Blockly.Msg.TRANSFORM_TRANSLATE_TITLE = "translate";
+Blockly.Msg.TRANSFORM_TRANSLATE_TOOLTIP = "Specifies an amount to displace objects within the display window";
+Blockly.Msg.TRANSFORM_AXIS_X = "x";
+Blockly.Msg.TRANSFORM_AXIS_Y = "y";
+Blockly.Msg.TRANSFORM_TRANSLATE_HELPURL = "http://p5js.org/reference/#/p5/translate";
+Blockly.Msg.TRANSFORM_ROTATE_TITLE = "rotate";
+Blockly.Msg.TRANSFORM_ROTATE_TOOLTIP = "Rotates a shape the amount specified by the angle parameter";
+Blockly.Msg.TRANSFORM_ROTATE_HELPURL = "http://p5js.org/reference/#/p5/rotate";
+
+Blockly.Msg.TRANSFORM_SHEAR_TITLE1 = "shear around";
+Blockly.Msg.TRANSFORM_SHEAR_TITLE2 = "by";
+Blockly.Msg.TRANSFORM_SHEAR_TOOLTIP_X = "Shears a shape around the x-axis the amount specified by the angle parameter";
+Blockly.Msg.TRANSFORM_SHEAR_TOOLTIP_Y = "Shears a shape around the y-axis the amount specified by the angle parameter";
+Blockly.Msg.TRANSFORM_SHEAR_HELPURL = "http://p5js.org/reference/#/p5/shearX";
+
 Blockly.Msg.STRUCTURES_DRAW_HELPURL = "http://p5js.org/reference/#/p5/draw";
 Blockly.Msg.STRUCTURES_DRAW_TITLE = "draw";
 Blockly.Msg.STRUCTURES_DRAW_TOOLTIP = "Called directly after setup()";

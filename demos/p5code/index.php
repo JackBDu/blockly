@@ -20,6 +20,7 @@
   <script src="../../blocks/shapes.js"></script>
   <script src="../../blocks/structures.js"></script>
   <script src="../../blocks/text.js"></script>
+  <script src="../../blocks/transform.js"></script>
   <script src="../../blocks/variables.js"></script>
   <script src="../../generators/p5dotjs.js"></script>
   <script src="../../generators/p5dotjs/colour.js"></script>
@@ -35,6 +36,7 @@
   <script src="../../generators/p5dotjs/shapes.js"></script>
   <script src="../../generators/p5dotjs/structures.js"></script>
   <script src="../../generators/p5dotjs/text.js"></script>
+  <script src="../../generators/p5dotjs/transform.js"></script>
   <script src="../../generators/p5dotjs/variables.js"></script>
   <script src="../../msg/js/en_p5.js"></script>
   <script src="msg/en.js"></script>
@@ -118,6 +120,11 @@
       <block type="shapes_arc"></block>
       <block type="shapes_quad"></block>
       <block type="shapes_triangle"></block>
+    </category>
+    <category name="Transform" id="catTransform">
+      <block type="transform_translate"></block>
+      <block type="transform_rotate"></block>
+      <block type="transform_shear"></block>
     </category>
     <category name="Structures" id="catStructures">
       <block type="structures_preload"></block>
