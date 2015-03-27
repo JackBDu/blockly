@@ -89,21 +89,28 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
+
     <category name="Colour" id="catColour">
-      <block type="colour_colour_mode"></block>
-      <block type="colour_picker"></block>
-      <block type="colour_colour"></block>
-      <block type="colour_background"></block>
-      <block type="colour_fill"></block>
-      <block type="colour_no_fill"></block>
-      <block type="colour_stroke"></block>
-      <block type="colour_no_stroke"></block>
-      <block type="colour_get_rgb"></block>
-      <block type="colour_get_hsb"></block>
+      <category name="Create">
+        <block type="colour_picker"></block>
+        <block type="colour_colour"></block>
+        <block type="colour_get_rgb"></block>
+        <block type="colour_get_hsb"></block>
+      </category>
+      <category name="Set">
+        <block type="colour_colour_mode"></block>
+        <block type="colour_background"></block>
+        <block type="colour_fill"></block>
+        <block type="colour_no_fill"></block>
+        <block type="colour_stroke"></block>
+        <block type="colour_no_stroke"></block>
+      </category>
     </category>
+
     <category name="Constants" id="catConstants">
       <block type="constants_pi"></block>
     </category>
+
     <category name="Environment" id="catEnvironment">
       <block type="environment_display"></block>
       <block type="environment_window"></block>
@@ -112,6 +119,7 @@
       <block type="environment_focused"></block>
       <block type="environment_no_cursor"></block>
     </category>
+
     <category name="Shapes" id="catShapes">
       <block type="shapes_point"></block>
       <block type="shapes_line"></block>
@@ -121,11 +129,13 @@
       <block type="shapes_quad"></block>
       <block type="shapes_triangle"></block>
     </category>
+
     <category name="Transform" id="catTransform">
       <block type="transform_translate"></block>
       <block type="transform_rotate"></block>
       <block type="transform_shear"></block>
     </category>
+
     <category name="Structures" id="catStructures">
       <block type="structures_preload"></block>
       <block type="structures_setup"></block>
@@ -135,11 +145,13 @@
       <block type="structures_pushpop"></block>
       <block type="structures_redraw"></block>
     </category>
+
     <category name="Renderings" id="catRenderings">
       <block type="renderings_create_canvas"></block>
       <block type="renderings_resize_canvas"></block>
       <block type="renderings_no_canvas"></block>
     </category>
+
     <category name="Logic" id="catLogic">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
@@ -149,6 +161,7 @@
       <block type="logic_null"></block>
       <block type="logic_ternary"></block>
     </category>
+
     <category name="Loops" id="catLoops">
       <block type="controls_repeat_ext">
         <value name="TIMES">
@@ -159,24 +172,29 @@
       </block>
       <block type="controls_whileUntil"></block>
     </category>
+
     <category name="Math" id="catMath">
       <block type="math_number"></block>
       <block type="math_three_number"></block>
       <block type="math_arithmetic"></block>
       <block type="math_single"></block>
     </category>
+
     <category name="Text" id="catText">
       <block type="text"></block>
       <block type="text_length"></block>
       <block type="text_print"></block>
     </category>
+
     <category name="Variables" id="catVariables">
       <block type="variables_get"></block>
       <block type="variables_set"></block>
     </category>
+
     <category name="Inputs" id="catInputs">
       <block type="inputs_touch_mouse"></block>
     </category>
+    
   </xml>
   </xml>
 
