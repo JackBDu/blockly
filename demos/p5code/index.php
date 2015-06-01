@@ -204,6 +204,19 @@
       <block type="data_char_convert"></block>
       <block type="data_hex_convert"></block>
     </category>
+
+    <category name="Lists" id="catLists">
+      <block type="lists_create_empty"></block>
+      <block type="lists_create_with"></block>
+      <block type="lists_repeat"></block>
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf"></block>
+      <block type="lists_getIndex"></block>
+      <block type="lists_setIndex"></block>
+      <block type="lists_getSublist"></block>
+      <block type="lists_split"></block>
+    </category>
     
   </xml>
   </xml>
