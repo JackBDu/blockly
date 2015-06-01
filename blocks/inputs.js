@@ -75,3 +75,57 @@ Blockly.Blocks['inputs_touch_mouse'] = {
     });
   }
 };
+
+Blockly.Blocks['inputs_date'] = {
+  /**
+   * Block for mouseX/mouseY/pmouseX/pmouseY/touchX/touchY/ptouchX/ptouchY.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var DATE =
+        [[Blockly.Msg.INPUTS_DATE_YEAR, 'YEAR'],
+         [Blockly.Msg.INPUTS_DATE_MONTH, 'MONTH'],
+         [Blockly.Msg.INPUTS_DATE_DAY, 'DAY'],
+         [Blockly.Msg.INPUTS_DATE_HOUR, 'HOUR'],
+         [Blockly.Msg.INPUTS_DATE_MINUTE, 'MINUTE'],
+         [Blockly.Msg.INPUTS_DATE_SECOND, 'SECOND']];
+    this.setColour(Blockly.Blocks.inputs.HUE);
+    this.setInputsInline(true);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(DATE), 'DATE');
+    this.setOutput(true, 'Number');
+    this.setHelpUrl(Blockly.Msg.INPUTS_DATE_HELPURL);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('DATE');
+
+      var TOOLTIPS = {
+        'YEAR': Blockly.Msg.INPUTS_DATE_TOOLTIP_YEAR,
+        'MONTH': Blockly.Msg.INPUTS_DATE_TOOLTIP_MONTH,
+        'DAY': Blockly.Msg.INPUTS_DATE_TOOLTIP_DAY,
+        'HOUR': Blockly.Msg.INPUTS_DATE_TOOLTIP_HOUR,
+        'MINUTE': Blockly.Msg.INPUTS_DATE_TOOLTIP_MINUTE,
+        'SECOND': Blockly.Msg.INPUTS_DATE_TOOLTIP_SECOND
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};
+
+Blockly.Blocks['inputs_millis'] = {
+  /**
+   * Block for mouseX/mouseY/pmouseX/pmouseY/touchX/touchY/ptouchX/ptouchY.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColour(Blockly.Blocks.inputs.HUE);
+    this.setInputsInline(true);
+    this.appendDummyInput()
+        .appendField('millis');
+    this.setOutput(true, 'Number');
+    this.setHelpUrl(Blockly.Msg.INPUTS_MILLIS_HELPURL);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.INPUTS_MILLIS_TOOLTIP);
+  }
+};

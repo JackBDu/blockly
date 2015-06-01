@@ -193,6 +193,8 @@
 
     <category name="Inputs" id="catInputs">
       <block type="inputs_touch_mouse"></block>
+      <block type="inputs_date"></block>
+      <block type="inputs_millis"></block>
     </category>
     
   </xml>

@@ -51,3 +51,28 @@ Blockly.p5dotjs['inputs_touch_mouse'] = function(block) {
   }
   return [code, Blockly.p5dotjs.ORDER_ATOMIC];
 };
+
+Blockly.p5dotjs['inputs_date'] = function(block) {
+  // year()/month()/day()/hour()/minute()/second().
+  var date = block.getFieldValue('DATE');
+  if (date=='YEAR') {
+    var code = 'year()';
+  } else if (date=="MONTH") {
+    var code = 'month()';
+  } else if (date=="DAY") {
+    var code = 'day()';
+  } else if (date=="HOUR") {
+    var code = 'hour()';
+  } else if (date=="MINUTE") {
+    var code = 'minute()';
+  } else if (date=="SECOND") {
+    var code = 'second()';
+  }
+  return [code, Blockly.p5dotjs.ORDER_ATOMIC];
+};
+
+Blockly.p5dotjs['inputs_millis'] = function(block) {
+  // millis().
+  var code = "millis()";
+  return [code, Blockly.p5dotjs.ORDER_ATOMIC];
+};
