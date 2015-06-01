@@ -16,6 +16,7 @@
   <script src="../../blocks/loops.js"></script>
   <script src="../../blocks/math.js"></script>
   <script src="../../blocks/procedures.js"></script>
+  <script src="../../blocks/data.js"></script>
   <script src="../../blocks/renderings.js"></script>
   <script src="../../blocks/shapes.js"></script>
   <script src="../../blocks/structures.js"></script>
@@ -31,6 +32,7 @@
   <script src="../../generators/p5dotjs/logic.js"></script>
   <script src="../../generators/p5dotjs/loops.js"></script>
   <script src="../../generators/p5dotjs/math.js"></script>
+  <script src="../../generators/p5dotjs/data.js"></script>
   <script src="../../generators/p5dotjs/procedures.js"></script>
   <script src="../../generators/p5dotjs/renderings.js"></script>
   <script src="../../generators/p5dotjs/shapes.js"></script>
@@ -195,6 +197,12 @@
       <block type="inputs_touch_mouse"></block>
       <block type="inputs_date"></block>
       <block type="inputs_millis"></block>
+    </category>
+
+    <category name="Data" id="catData">
+      <block type="data_primitive_convert"></block>
+      <block type="data_char_convert"></block>
+      <block type="data_hex_convert"></block>
     </category>
     
   </xml>

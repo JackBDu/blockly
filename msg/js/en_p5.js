@@ -16,6 +16,32 @@ Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_HALFPI = "A mathematical constant with
 Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_ONEPI = "A mathematical constant with the value 3.14159265358979323846";
 Blockly.Msg.CONSTANTS_PI_OPERATOR_TOOLTIP_TWOPI = "A mathematical constant with the value 6.28318530717958647693";
 
+Blockly.Msg.DATA_PRIMITIVE_HELPURL = "http://p5js.org/reference/#/p5/float";
+Blockly.Msg.DATA_PRIMITIVE_TOOLTIP_FLOAT = "Converts a string to its floating point representation";
+Blockly.Msg.DATA_PRIMITIVE_TOOLTIP_INT = "Converts a boolean, string, or float to its integer representation";
+Blockly.Msg.DATA_PRIMITIVE_TOOLTIP_STR = "Converts a boolean, string or number to its string representation";
+Blockly.Msg.DATA_PRIMITIVE_TOOLTIP_BOOLEAN = "Converts a number or string to its boolean representation";
+Blockly.Msg.DATA_PRIMITIVE_TOOLTIP_BYTE = "Converts a number, string or boolean to its byte representation";
+Blockly.Msg.DATA_PRIMITIVE_TITLE1 = "convert";
+Blockly.Msg.DATA_PRIMITIVE_TITLE2 = "to";
+Blockly.Msg.DATA_PRIMITIVE_FLOAT = "float";
+Blockly.Msg.DATA_PRIMITIVE_INT = "integer";
+Blockly.Msg.DATA_PRIMITIVE_STR = "string";
+Blockly.Msg.DATA_PRIMITIVE_BOOLEAN = "boolean";
+Blockly.Msg.DATA_PRIMITIVE_BYTE = "byte";
+
+Blockly.Msg.DATA_CHARUNCHAR_HELPURL = "http://p5js.org/reference/#/p5/char";
+Blockly.Msg.DATA_CHARUNCHAR_TOOLTIP_CHAR = "Converts a number or string to its corresponding single-character string representation";
+Blockly.Msg.DATA_CHARUNCHAR_TOOLTIP_UNCHAR = "Converts a single-character string to its corresponding integer representation";
+Blockly.Msg.DATA_CHARUNCHAR_CHAR = "char";
+Blockly.Msg.DATA_CHARUNCHAR_UNCHAR = "unchar";
+
+Blockly.Msg.DATA_HEXUNHEX_HELPURL = "http://p5js.org/reference/#/p5/hex";
+Blockly.Msg.DATA_HEXUNHEX_TOOLTIP_HEX = "Converts a number to a string in its equivalent hexadecimal notation";
+Blockly.Msg.DATA_HEXUNHEX_TOOLTIP_UNHEX = "Converts a string representation of a hexadecimal number to its equivalent integer value";
+Blockly.Msg.DATA_HEXUNHEX_HEX = "hex";
+Blockly.Msg.DATA_HEXUNHEX_UNHEX = "unhex";
+
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_CURRENTMOUSEX = "The current horizontal position of the mouse, relative to (0, 0) of the canvas";
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_CURRENTMOUSEY = "The current vertical position of the mouse, relative to (0, 0) of the canvas";
 Blockly.Msg.INPUTS_MOUSETOUCH_TOOLTIP_CURRENTTOUCHX = "The horizontal position of one finger, relative to (0, 0) of the canvas";
