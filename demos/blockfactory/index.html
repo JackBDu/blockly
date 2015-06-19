@@ -38,7 +38,10 @@
     #blockly {
       position: fixed;
     }
-    #preview {
+    #previewFrame {
+      border-style: solid;
+      border-color: #ddd;
+      border-width: 0 1px 1px 0;
       position: absolute;
     }
     pre {
@@ -115,17 +118,12 @@
         <table>
           <tr>
             <td height="30%">
-              <div id="preview"></div>
+              <iframe id="previewFrame" src="preview.html?ltr"></iframe>
             </td>
           </tr>
           <tr>
             <td height="5%">
-              <h3>Language code:
-                <select id="format">
-                  <option value="JavaScript">JavaScript</option>
-                  <option value="JSON">JSON</option>
-                </select>
-              </h3>
+              <h3>Language code:</h3>
             </td>
           </tr>
           <tr>
@@ -139,7 +137,6 @@
                 <select id="language">
                   <option value="JavaScript">JavaScript</option>
                   <option value="Python">Python</option>
-                  <option value="PHP">PHP</option>
                   <option value="Dart">Dart</option>
                 </select>
               </h3>

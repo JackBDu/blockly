@@ -113,16 +113,15 @@
   </xml>
 
   <script>
-    var workspace = Blockly.inject('blocklyDiv',
-        {media: '../../media/',
-         toolbox: document.getElementById('toolbox')});
-    Blockly.Xml.domToWorkspace(workspace,
+    Blockly.inject(document.getElementById('blocklyDiv'),
+        {toolbox: document.getElementById('toolbox')});
+    Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
         document.getElementById('startBlocks'));
 
     function showCode() {
       // Generate JavaScript code and display it.
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      var code = Blockly.JavaScript.workspaceToCode();
       alert(code);
     }
 
@@ -131,7 +130,7 @@
       window.LoopTrap = 1000;
       Blockly.JavaScript.INFINITE_LOOP_TRAP =
           'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      var code = Blockly.JavaScript.workspaceToCode();
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
       try {
         eval(code);

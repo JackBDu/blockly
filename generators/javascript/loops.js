@@ -111,7 +111,7 @@ Blockly.JavaScript['controls_for'] = function(block) {
     // Cache non-trivial values to variables to prevent repeated look-ups.
     var startVar = argument0;
     if (!argument0.match(/^\w+$/) && !Blockly.isNumber(argument0)) {
-      startVar = Blockly.JavaScript.variableDB_.getDistinctName(
+      var startVar = Blockly.JavaScript.variableDB_.getDistinctName(
           variable0 + '_start', Blockly.Variables.NAME_TYPE);
       code += 'var ' + startVar + ' = ' + argument0 + ';\n';
     }
@@ -152,19 +152,12 @@ Blockly.JavaScript['controls_forEach'] = function(block) {
       Blockly.JavaScript.ORDER_ASSIGNMENT) || '[]';
   var branch = Blockly.JavaScript.statementToCode(block, 'DO');
   branch = Blockly.JavaScript.addLoopTrap(branch, block.id);
-  var code = '';
-  // Cache non-trivial values to variables to prevent repeated look-ups.
-  var listVar = argument0;
-  if (!argument0.match(/^\w+$/)) {
-    listVar = Blockly.JavaScript.variableDB_.getDistinctName(
-        variable0 + '_list', Blockly.Variables.NAME_TYPE);
-    code += 'var ' + listVar + ' = ' + argument0 + ';\n';
-  }
   var indexVar = Blockly.JavaScript.variableDB_.getDistinctName(
       variable0 + '_index', Blockly.Variables.NAME_TYPE);
   branch = Blockly.JavaScript.INDENT + variable0 + ' = ' +
-      listVar + '[' + indexVar + '];\n' + branch;
-  code += 'for (var ' + indexVar + ' in ' + listVar + ') {\n' + branch + '}\n';
+      argument0 + '[' + indexVar + '];\n' + branch;
+  var code = 'for (var ' + indexVar + ' in ' + argument0 + ') {\n' +
+      branch + '}\n';
   return code;
 };
 

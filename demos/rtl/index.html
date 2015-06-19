@@ -16,18 +16,16 @@
       font-weight: normal;
       font-size: 140%;
     }
-    #blocklyDiv {
+    #svgDiv {
       height: 600px;
       width: 800px;
     }
   </style>
   <script>
     function init() {
-      var workspace = Blockly.inject('blocklyDiv',
-          {media: '../../media/',
-           rtl: true,
-           toolbox: document.getElementById('toolbox')});
-      Blockly.Xml.domToWorkspace(workspace,
+      Blockly.inject(document.getElementById('svgDiv'),
+          {rtl: true, toolbox: document.getElementById('toolbox')});
+      Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
           document.getElementById('startBlocks'));
       //window.onbeforeunload = function() {
       //  return 'Leaving this page will result in the loss of your work.';
@@ -39,7 +37,7 @@
   <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
     <a href="../index.html">Demos</a> &gt; Right-to-Left</h1>
 
-  <div id="blocklyDiv"></div>
+  <div id="svgDiv"></div>
 
   <xml id="toolbox" style="display: none">
     <category name="منطق">

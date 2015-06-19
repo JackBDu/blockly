@@ -121,10 +121,9 @@
   </xml>
 
   <script>
-    var workspace = Blockly.inject('blocklyDiv',
-        {media: '../../media/',
-         toolbox: document.getElementById('toolbox')});
-    Blockly.Xml.domToWorkspace(workspace,
+    Blockly.inject(document.getElementById('blocklyDiv'),
+        {toolbox: document.getElementById('toolbox')});
+    Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
         document.getElementById('startBlocks'));
 
     var myInterpreter = null;
@@ -158,7 +157,7 @@
     var highlightPause = false;
 
     function highlightBlock(id) {
-      workspace.highlightBlock(id);
+      Blockly.mainWorkspace.highlightBlock(id);
       highlightPause = true;
     }
 
@@ -166,14 +165,14 @@
       // Generate JavaScript code and parse it.
       Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
       Blockly.JavaScript.addReservedWords('highlightBlock');
-      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      var code = Blockly.JavaScript.workspaceToCode();
       myInterpreter = new Interpreter(code, initApi);
 
       alert('Ready to execute this code:\n\n' + code);
       document.getElementById('stepButton').disabled = '';
       highlightPause = false;
-      workspace.traceOn(true);
-      workspace.highlightBlock(null);
+      Blockly.mainWorkspace.traceOn(true);
+      Blockly.mainWorkspace.highlightBlock(null);
     }
 
     function stepCode() {

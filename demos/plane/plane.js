@@ -75,12 +75,6 @@ Plane.LANGUAGE_NAME = {
 Plane.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 
 /**
- * Main Blockly workspace.
- * @type Blockly.WorkspaceSvg
- */
-Plane.workspace = null;
-
-/**
  * Extracts a parameter from the URL.
  * If the parameter is absent default_value is returned.
  * @param {string} name The name of the parameter.
@@ -143,11 +137,11 @@ Plane.loadBlocks = function(defaultXml) {
     // Language switching stores the blocks during the reload.
     delete window.sessionStorage.loadOnceBlocks;
     var xml = Blockly.Xml.textToDom(loadOnce);
-    Blockly.Xml.domToWorkspace(Plane.workspace, xml);
+    Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
   } else if (defaultXml) {
     // Load the editor with default starting blocks.
     var xml = Blockly.Xml.textToDom(defaultXml);
-    Blockly.Xml.domToWorkspace(Plane.workspace, xml);
+    Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
   }
 };
 
@@ -160,7 +154,7 @@ Plane.changeLanguage = function() {
   // not load Blockly.
   // MSIE 11 does not support sessionStorage on file:// URLs.
   if (typeof Blockly != 'undefined' && window.sessionStorage) {
-    var xml = Blockly.Xml.workspaceToDom(Plane.workspace);
+    var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
     var text = Blockly.Xml.domToText(xml);
     window.sessionStorage.loadOnceBlocks = text;
   }
@@ -262,7 +256,7 @@ Plane.init = function() {
         'width=725, initial-scale=.35, user-scalable=no');
   }
 
-  Plane.workspace = Blockly.inject('blockly',
+  Blockly.inject(document.getElementById('blockly'),
       {media: '../../media/',
        rtl: Plane.isRtl(),
        toolbox: document.getElementById('toolbox')});
@@ -274,7 +268,7 @@ Plane.init = function() {
       '</xml>';
   Plane.loadBlocks(defaultXml);
 
-  Plane.workspace.addChangeListener(Plane.recalculate);
+  Blockly.addChangeListener(Plane.recalculate);
 
   // Initialize the slider.
   var svg = document.getElementById('plane');
@@ -333,14 +327,14 @@ Plane.initLanguage = function() {
 Plane.recalculate = function() {
   // Find the 'set' block and use it as the formula root.
   var rootBlock = null;
-  var blocks = Plane.workspace.getTopBlocks(false);
+  var blocks = Blockly.mainWorkspace.getTopBlocks(false);
   for (var i = 0, block; block = blocks[i]; i++) {
     if (block.type == 'plane_set_seats') {
       rootBlock = block;
     }
   }
   var seats = NaN;
-  Blockly.JavaScript.init(Plane.workspace);
+  Blockly.JavaScript.init(Blockly.mainWorkspace);
   var code = Blockly.JavaScript.blockToCode(rootBlock);
   try {
     seats = eval(code);
@@ -358,8 +352,8 @@ Plane.recalculate = function() {
       block.customUpdate && block.customUpdate();
     }
   }
-  updateBlocks(Plane.workspace.getAllBlocks());
-  updateBlocks(Plane.workspace.flyout_.workspace_.getAllBlocks());
+  updateBlocks(Blockly.mainWorkspace.getAllBlocks());
+  updateBlocks(Blockly.mainWorkspace.flyout_.workspace_.getAllBlocks());
 };
 
 /**

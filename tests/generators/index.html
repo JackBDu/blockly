@@ -24,18 +24,6 @@
 <script src="../../generators/python/colour.js"></script>
 <script src="../../generators/python/variables.js"></script>
 <script src="../../generators/python/procedures.js"></script>
-
-  <script src="../../generators/php.js"></script>
-  <script src="unittest_php.js"></script>
-  <script src="../../generators/php/logic.js"></script>
-  <script src="../../generators/php/loops.js"></script>
-  <script src="../../generators/php/math.js"></script>
-  <script src="../../generators/php/text.js"></script>
-  <script src="../../generators/php/lists.js"></script>
-  <script src="../../generators/php/colour.js"></script>
-  <script src="../../generators/php/variables.js"></script>
-  <script src="../../generators/php/procedures.js"></script>
-
 <script src="../../generators/dart.js"></script>
 <script src="unittest_dart.js"></script>
 <script src="../../generators/dart/logic.js"></script>
@@ -59,11 +47,10 @@
 <script>
 'use strict';
 
-var workspace = null;
-
 function start() {
-  workspace = Blockly.inject('blocklyDiv',
-      {media: '../../media/', toolbox: document.getElementById('toolbox')});
+  var toolbox = document.getElementById('toolbox');
+  Blockly.inject(document.getElementById('svg'),
+                 {media: '../../media/', toolbox: toolbox});
 }
 
 function loadXml() {
@@ -104,14 +91,14 @@ function fetchFile(xmlUrl) {
 function fromXml(xmlText) {
   var output = document.getElementById('importExport');
   output.value = xmlText;
-  workspace.clear();
+  Blockly.mainWorkspace.clear();
   try {
     var xmlDoc = Blockly.Xml.textToDom(xmlText);
   } catch (e) {
     alert('Error parsing XML:\n' + e);
     return;
   }
-  Blockly.Xml.domToWorkspace(workspace, xmlDoc);
+  Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDoc);
 }
 
 function setOutput(text) {
@@ -122,29 +109,24 @@ function setOutput(text) {
 }
 
 function toXml() {
-  var xmlDom = Blockly.Xml.workspaceToDom(workspace);
+  var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
   var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
   setOutput(xmlText);
 }
 
 function toJavaScript() {
   var code = '\'use strict\';\n\n'
-  code += Blockly.JavaScript.workspaceToCode(workspace);
+  code += Blockly.JavaScript.workspaceToCode();
   setOutput(code);
 }
 
 function toPython() {
-  var code = Blockly.Python.workspaceToCode(workspace);
-  setOutput(code);
-}
-
-function toPhp() {
-  var code = Blockly.PHP.workspaceToCode(workspace);
+  var code = Blockly.Python.workspaceToCode();
   setOutput(code);
 }
 
 function toDart() {
-  var code = Blockly.Dart.workspaceToCode(workspace);
+  var code = Blockly.Dart.workspaceToCode();
   setOutput(code);
 }
 </script>
@@ -163,11 +145,14 @@ h1 {
   font-weight: normal;
   font-size: 140%;
 }
-#blocklyDiv {
+#svg {
   float: right;
   height: 95%;
   width: 69%;
   margin-top: 5px;
+}
+.blocklySvg {
+  border: 1px solid #000;
 }
 #importExport {
   height: 100%;
@@ -177,7 +162,7 @@ h1 {
 </head>
 <body onload="start()">
 
-  <div id="blocklyDiv"></div>
+  <div id="svg"></div>
 
   <xml id="toolbox" style="display: none">
     <category name="Unit test">
@@ -423,7 +408,6 @@ h1 {
       <input type="button" value="XML" onclick="toXml()">
       <input type="button" value="JavaScript" onclick="toJavaScript()">
       <input type="button" value="Python" onclick="toPython()">
-      <input type="button" value="PHP" onclick="toPhp()">
       <input type="button" value="Dart" onclick="toDart()">
     </p>
   </td></tr><tr><td height="99%">

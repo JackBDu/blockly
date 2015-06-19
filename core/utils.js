@@ -20,8 +20,8 @@
 
 /**
  * @fileoverview Utility methods.
- * These methods are not specific to Blockly, and could be factored out into
- * a JavaScript framework such as Closure.
+ * These methods are not specific to Blockly, and could be factored out if
+ * a JavaScript framework such as Closure were used.
  * @author fraser@google.com (Neil Fraser)
  */
 'use strict';
@@ -97,13 +97,9 @@ Blockly.hasClass_ = function(element, className) {
  * @private
  */
 Blockly.bindEvent_ = function(node, name, thisObject, func) {
-  if (thisObject) {
-    var wrapFunc = function(e) {
-      func.call(thisObject, e);
-    };
-  } else {
-    var wrapFunc = func;
-  }
+  var wrapFunc = function(e) {
+    func.call(thisObject, e);
+  };
   node.addEventListener(name, wrapFunc, false);
   var bindData = [[node, name, wrapFunc]];
   // Add equivalent touch event.
@@ -232,22 +228,9 @@ Blockly.noEvent = function(e) {
 };
 
 /**
- * Is this event targeting a text input widget?
- * @param {!Event} e An event.
- * @return {boolean} True if text input.
- * @private
- */
-Blockly.isTargetInput_ = function(e) {
-  return e.target.type == 'textarea' || e.target.type == 'text' ||
-         e.target.type == 'number' || e.target.type == 'email' ||
-         e.target.type == 'password' || e.target.type == 'search' ||
-         e.target.type == 'tel' || e.target.type == 'url';
-};
-
-/**
  * Return the coordinates of the top-left corner of this element relative to
- * its parent.  Only for SVG elements and children (e.g. rect, g, path).
- * @param {!Element} element SVG element to find the coordinates of.
+ * its parent.
+ * @param {!Element} element Element to find the coordinates of.
  * @return {!Object} Object with .x and .y properties.
  * @private
  */
@@ -271,9 +254,9 @@ Blockly.getRelativeXY_ = function(element) {
   var r = transform &&
           transform.match(/translate\(\s*([-\d.]+)([ ,]\s*([-\d.]+)\s*\))?/);
   if (r) {
-    xy.x += parseFloat(r[1]);
+    xy.x += parseInt(r[1], 10);
     if (r[3]) {
-      xy.y += parseFloat(r[3]);
+      xy.y += parseInt(r[3], 10);
     }
   }
   return xy;
@@ -281,7 +264,7 @@ Blockly.getRelativeXY_ = function(element) {
 
 /**
  * Return the absolute coordinates of the top-left corner of this element.
- * The origin (0,0) is the top-left corner of the nearest SVG.
+ * The origin (0,0) is the top-left corner of the Blockly svg.
  * @param {!Element} element Element to find the coordinates of.
  * @return {!Object} Object with .x and .y properties.
  * @private
@@ -295,8 +278,20 @@ Blockly.getSvgXY_ = function(element) {
     x += xy.x;
     y += xy.y;
     element = element.parentNode;
-  } while (element && element.nodeName.toLowerCase() != 'svg');
+  } while (element && element != Blockly.svg);
   return {x: x, y: y};
+};
+
+/**
+ * Return the absolute coordinates of the top-left corner of this element.
+ * The origin (0,0) is the top-left corner of the page body.
+ * @param {!Element} element Element to find the coordinates of.
+ * @return {!Object} Object with .x and .y properties.
+ * @private
+ */
+Blockly.getAbsoluteXY_ = function(element) {
+  var xy = Blockly.getSvgXY_(element);
+  return Blockly.convertCoordinates(xy.x, xy.y, false);
 };
 
 /**
@@ -339,19 +334,44 @@ Blockly.isRightButton = function(e) {
 };
 
 /**
+ * Convert between HTML coordinates and SVG coordinates.
+ * @param {number} x X input coordinate.
+ * @param {number} y Y input coordinate.
+ * @param {boolean} toSvg True to convert to SVG coordinates.
+ *     False to convert to mouse/HTML coordinates.
+ * @return {!Object} Object with x and y properties in output coordinates.
+ */
+Blockly.convertCoordinates = function(x, y, toSvg) {
+  if (toSvg) {
+    x -= window.scrollX || window.pageXOffset;
+    y -= window.scrollY || window.pageYOffset;
+  }
+  var svgPoint = Blockly.svg.createSVGPoint();
+  svgPoint.x = x;
+  svgPoint.y = y;
+  var matrix = Blockly.svg.getScreenCTM();
+  if (toSvg) {
+    matrix = matrix.inverse();
+  }
+  var xy = svgPoint.matrixTransform(matrix);
+  if (!toSvg) {
+    xy.x += window.scrollX || window.pageXOffset;
+    xy.y += window.scrollY || window.pageYOffset;
+  }
+  return xy;
+};
+
+/**
  * Return the converted coordinates of the given mouse event.
  * The origin (0,0) is the top-left corner of the Blockly svg.
  * @param {!Event} e Mouse event.
- * @param {!Element} svg SVG element.
  * @return {!Object} Object with .x and .y properties.
  */
-Blockly.mouseToSvg = function(e, svg) {
-  var svgPoint = svg.createSVGPoint();
-  svgPoint.x = e.clientX;
-  svgPoint.y = e.clientY;
-  var matrix = svg.getScreenCTM();
-  matrix = matrix.inverse();
-  return svgPoint.matrixTransform(matrix);
+Blockly.mouseToSvg = function(e) {
+  var scrollX = window.scrollX || window.pageXOffset;
+  var scrollY = window.scrollY || window.pageYOffset;
+  return Blockly.convertCoordinates(e.clientX + scrollX,
+                                    e.clientY + scrollY, true);
 };
 
 /**
